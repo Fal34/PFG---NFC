@@ -1,0 +1,114 @@
+\documentclass[a4paper,10pt, twoside, openright,makeidx]{book}
+%\usepackage[a4paper,left=20mm,right=20mm,top=25mm,bottom=25mm,]{geometry}
+\usepackage[a4paper,left=25mm,right=25mm,top=30mm,bottom=30mm,total={210mm,297mm}]{geometry}
+%\usepackage[a4paper,total={210mm,297mm}]{geometry}
+
+
+
+\usepackage{subfiles}
+%\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}    %Interprete de tildes
+\usepackage[english,spanish]{babel}
+
+\usepackage{hyperref}
+\usepackage{glossaries}		%Soporte para glosario
+
+\usepackage{amsmath,amssymb}    %Paquete de entornos matematicos
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{quotchap}
+\usepackage{epsfig}
+\usepackage[all]{xy}
+
+\usepackage{sagetex}    % Insertar bloques de Sage
+
+\usepackage{wasysym}	% XBox / CheckedBox characters
+
+\usepackage{makeidx}	%indice
+\usepackage{multicol,multirow}
+\setcounter{tocdepth}{3}
+\hypersetup{backref,
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=black,%
+    linkcolor=red,%
+    urlcolor=cyan
+    }
+
+\usepackage[toc,page]{appendix}    % Apendices
+
+% Bibliografia
+\usepackage{cite}
+% Comentarios
+\newcommand{\comm}[1]{\marginpar{%
+\vskip-\baselineskip %raise the marginpar a bit
+\raggedright\footnotesize
+\itshape\hrule\smallskip#1\par\smallskip\hrule}}
+
+% Custom Environments
+\newenvironment{abstract}%
+{\cleardoublepage\null \vfill\begin{center}%
+\bfseries \abstractname \end{center}}%
+{\vfill\null}
+
+% index
+%\let\orgtheindex\theindex
+%\let\orgendtheindex\endtheindex
+%\def\theindex{%
+%  \def\twocolumn{\begin{multicols}{2}}%
+%  \def\onecolumn{}%
+%  \clearpage
+%  \orgtheindex
+%}
+%\def\endtheindex{%
+%  \end{multicols}
+%  \orgendtheindex
+%}
+% /index
+
+
+% Página en blanco
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+\makeglossaries
+\makeindex
+
+%% Datos del PFC
+\newcommand{\titulo}{Seguridad utilizando dispositivos NFC}
+\newcommand{\autor}{Fidel Abascal López}
+\newcommand{\director}{Domingo Gómez Pérez}
+\newcommand{\tutor}{}
+\newcommand{\vocal}{Nombre Apellido1 Apellido2}
+\newcommand{\vocalsup}{Nombre Apellido1 Apellido2}
+\newcommand{\presidente}{Nombre Apellido1 Apellido2}
+\newcommand{\presidentesup}{Nombre Apellido1 Apellido2}
+\newcommand{\carrera}{Grado en Ingeniería Informática}
+\title{\titulo}
+\author{\autor}
+\begin{document}
+\maketitle{}
+\tableofcontents{}
+\chapter{Introducción}
+\subfile{introduccion}
+\chapter{Criptografía de curvas elipticas}
+\subfile{criptografia}
+\chapter{Metodología y Desarrollo de la Aplicación}
+\subfile{ingenieria}
+\chapter{Software y Tecnologías}
+\subfile{software}
+\bibliographystyle{plain}
+\bibliography{sources}
+\nocite{*}
+\afterpage{\blankpage}	% Página en blanco
+
+\end{document}
+%sagemathcloud={"latex_command":"pdflatex -synctex=1 -interact=nonstopmode 'PFC.tex'"}
