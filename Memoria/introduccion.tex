@@ -6,4 +6,17 @@ Sin embargo, es razonable entender lo difícil que es contar o saber cuántas pe
 
 Por esta razón, se ha pensado en crear una aplicación para sistemas Android que permita al usuario estimar el número de personas que hay en una foto (por ejemplo,el de una manifestación). La manera de proceder, en primer lugar, ha sido implementar un algoritmo en Python (software) que nos permitiera estimar el número de personas en una fotografía, así como el error cometido en esa estimación, es decir, la varianza. Para que esta estimación resultara más sencilla, se ha dividido la imagen en cuadrados, mediante una rejilla o cuadrícula también implementada por el algoritmo. De esta manera, se consigue reducir la dificultad del problema, ya que se estimaría el número de partículas/personas en cada cuadrado.
 
+
+#########################BORRAR############
+
+
+
+Existe la consideración generalizada que aquellos elementos más seguros a la hora de identificar y autenticar a un usuario de un sistema son aquellos que implican el uso de parámetros biométricos. Por ejemplo, el algoritmo para el reconocimiento del iris patentado por el investigador de la universidad de Cambridge, John Daugman, se basa en el iris como elemento único e intransferible para cada persona[\cite{irisramli}]. De forma análoga se utilizan algoritmos basados en la estructura facial o huellas dactilares. Por otra parte, Manuel Lucena López, doctor en informática de la universidad de Jaén, asegura en su publicación [\cite{lucena}] que esta clase de `requerimientos biométricos` se pueden reducir a problemas de autenticación basada en dispositivos. Es decir, una tarjeta puede actuar con el mismo compromiso de seguridad que dichos elementos biológicos.\\
+
+Al igual que con los sistemas criptográficos (criptosistemas), la implementación más segura suele ser la menos eficiente. En la actualidad, un mundo globalizado donde la competencia  hace de la optimización un objetivo en el que se invierten millones en capital. En el mundo del motor un incremento de la velocidad punta de 3km/h puede implicar reducir el tiempo en unas décimas vitales que podrían implicar la diferencia entre ser primero o ser segundo. Dentro de la criptología y la seguridad de comunicaciones y autenticación también está afectado por este hecho y no está exento de la voracidad por optimizar el trinomio de recursos, tiempo y resultados. Dentro de este contexto la tecnología tan asequible como NFC (`Near Field Comunication`), - dispositivos para la comunicación de información empleando radiofrecuencia de corto alcance- que ha conquistado numerosos ámbitos, será el soporte de estudio de este `Trabajo de Fin de Grado` (TFG a partir de ahora) como dispositivo de autenticación.\\
+
+Como suele ser habitual, un dispositivo `barato` tiene ciertas desventajas. Respecto a la seguridad criptográfica con NFC el mayor inconveniente suele ser el tamaño de almacenamiento - inferior a 500 bits generalmente-. Este problema implica utilizar criptosistemas que puedan trabajar con tamaños reducidos de información sin comprometer la seguridad.\\
+
+Veremos cómo la evolución en la criptografía también es notoria gracias a grandes avances en los últimos 40 años. A su vez, se implementará una aplicación para `smartphones` que, gracias a sistemas avanzados de criptografía, permitirán a un usuario crear y utilizar un `tag` NFC como dispositivo de autenticación en un sistema ficticio.\\
+
 \end{document}

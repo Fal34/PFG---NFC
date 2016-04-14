@@ -94,21 +94,82 @@
 \newcommand{\carrera}{Grado en Ingeniería Informática}
 \title{\titulo}
 \author{\autor}
+
 \begin{document}
+
+%###### - Portada - ######
+\begin{center}
+\includegraphics[width=0.25\textwidth]{img/unicanLogo}
+\\
 \maketitle{}
+\carrera
+\\
+Universidad de Cantabria
+\\
+\\
+\\
+\begin{flushleft}
+\begin{tabular}
+Director: & Domingo Gómez Pérez\\
+\end{tabular}
+\end{flushleft}
+\end{center}
+
+%###### - Fin Portada - ######
 \tableofcontents{}
+
+\chapter{Resumen}
+\subfile{caps/resumen}
+
+% ### - OLD - ### %
+
 \chapter{Introducción}
-\subfile{introduccion}
-\chapter{Criptografía de curvas elipticas}
+\subfile{caps/introduccion}
+\chapter{Criptografía de curvas elípticas}
 \subfile{criptografia}
 \chapter{Metodología y Desarrollo de la Aplicación}
 \subfile{ingenieria}
 \chapter{Software y Tecnologías}
 \subfile{software}
+
+% ### - Fin OLD - ### %
+
+% #### - Parte teórica y fundamentación - ####%
+
+%\chapter{Abstract}
+%\subfile{caps/abstract}
+%\chapter{Motivación}
+%\subfile{caps/motivacion}
+%\chapter{Objetivo}
+%\subfile{caps/objetivo}
+%\chapter{Criptología}
+%\subfile{caps/criptologia}
+%\chapter{Seguridad}
+%\subfile{caps/seguridad}
+%\chapter{Protocolos simétricos y asimétricos}
+%\subfile{caps/protocolos}
+%\chapter{Logaritmos discretos}
+%\subfile{caps/logaritmos}
+%\chapter{Criptología con curvas elípticas - ECC}
+%\subfile{caps/criptografiaECC}
+%\chapter{Tecnología NFC}
+%\subfile{caps/nfc}
+%
+%% #### - Desarrollo de la aplicación - #### %
+%\chapter{Autenticación en sistema ficticio}
+%\subfile{caps/aplicacion}
+%
+%% ### - Conclusiones y futuras mejoras - ### %
+%\chapter{Conclusiones}
+%\subfile{caps/conclusiones}
+
+% #### - Bibliografía & Referencias -  ###
 \bibliographystyle{plain}
 \bibliography{sources}
 \nocite{*}
 \afterpage{\blankpage}	% Página en blanco
+
+% ### - Fin Referencias - ###
 
 \end{document}
 %sagemathcloud={"latex_command":"pdflatex -synctex=1 -interact=nonstopmode 'PFC.tex'"}
