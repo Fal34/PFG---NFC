@@ -1,3 +1,13 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{lucena}
+Manuel~Jos{\'e} Lucena.
+\newblock Criptograf{\'\i}a y seguridad en computadores.
+\newblock {\em versi{\'o}n 0.7}, 5, 1999.
+
+\bibitem{ramli2008iris}
+Mohamad Ramli, Nurul Akmar, Muhammad~Saufi Kamarudin, and Ariffuddin Joret.
+\newblock Iris recognition for personal identification.
+\newblock 2008.
 
 \end{thebibliography}

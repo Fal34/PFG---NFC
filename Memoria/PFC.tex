@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt, twoside, openright,makeidx]{book}
+\documentclass[a4paper,12pt, twoside, openright,makeidx]{book}
 %\usepackage[a4paper,left=20mm,right=20mm,top=25mm,bottom=25mm,]{geometry}
 \usepackage[a4paper,left=25mm,right=25mm,top=30mm,bottom=30mm,total={210mm,297mm}]{geometry}
 %\usepackage[a4paper,total={210mm,297mm}]{geometry}
@@ -23,7 +23,6 @@
 \usepackage{epsfig}
 \usepackage[all]{xy}
 
-\usepackage{sagetex}    % Insertar bloques de Sage
 
 \usepackage{wasysym}	% XBox / CheckedBox characters
 
@@ -34,7 +33,8 @@
     colorlinks,%
     citecolor=blue,%
     filecolor=black,%
-    linkcolor=red,%
+    linkcolor=[rgb]{0.058823529,0.239215686,0.466666667
+},%
     urlcolor=cyan
     }
 
@@ -98,46 +98,61 @@
 \begin{document}
 
 %###### - Portada - ######
+\begin{titlepage}
+
 \begin{center}
-\includegraphics[width=0.25\textwidth]{img/unicanLogo}
-\\
-\maketitle{}
-\carrera
-\\
-Universidad de Cantabria
-\\
-\\
-\\
-\begin{flushleft}
-\begin{tabular}
-Director: & Domingo Gómez Pérez\\
-\end{tabular}
-\end{flushleft}
+\vspace*{-1in}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=5cm]{./img/unicanLogo}
 \end{center}
+\end{figure}
+
+FACULTAD DE CIENCIAS\\
+\vspace*{0.15in}
+DEPARTAMENTO DE... \\
+\vspace*{0.6in}
+\begin{large}
+PHD THESIS:\\
+\end{large}
+\vspace*{0.2in}
+\begin{Large}
+\textbf{EL TÍTULO DE LA TESIS ES MUY IMPORTANTE, ASÍ QUE, NO OLVIDES PONER UNO QUE SEA INTERESANTE Y ADECUADO PARA TU TESIS} \\
+\end{Large}
+\vspace*{0.3in}
+\begin{large}
+A Thesis submitted by Amy Wong for the degree of Doctor of Philosophy in the Mars University\\
+\end{large}
+\vspace*{0.3in}
+\rule{80mm}{0.1mm}\\
+\vspace*{0.1in}
+\begin{large}
+  \begin{flushleft}
+Supervised by: \\
+Hubert J. Farnsworth \\
+\end{flushleft}
+
+\end{large}
+\end{center}
+
+\end{titlepage}
 
 %###### - Fin Portada - ######
 \tableofcontents{}
+\listoffigures
 
 \chapter{Resumen}
-\subfile{caps/resumen}
+\subfile{./caps/resumen}
 
-% ### - OLD - ### %
+\chapter{Abstract}
+\subfile{./caps/abstract}
 
 \chapter{Introducción}
-\subfile{caps/introduccion}
-\chapter{Criptografía de curvas elípticas}
-\subfile{criptografia}
-\chapter{Metodología y Desarrollo de la Aplicación}
-\subfile{ingenieria}
-\chapter{Software y Tecnologías}
-\subfile{software}
-
-% ### - Fin OLD - ### %
+\subfile{./caps/introduccion}
 
 % #### - Parte teórica y fundamentación - ####%
 
-%\chapter{Abstract}
-%\subfile{caps/abstract}
+
 %\chapter{Motivación}
 %\subfile{caps/motivacion}
 %\chapter{Objetivo}
