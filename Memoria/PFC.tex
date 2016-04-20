@@ -92,6 +92,7 @@
 \newcommand{\presidente}{Nombre Apellido1 Apellido2}
 \newcommand{\presidentesup}{Nombre Apellido1 Apellido2}
 \newcommand{\carrera}{Grado en Ingeniería Informática}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \title{\titulo}
 \author{\autor}
 
@@ -142,12 +143,15 @@ Hubert J. Farnsworth \\
 \listoffigures
 
 \chapter{Resumen}
+\label{{Resumen}
 \subfile{./caps/resumen}
 
 \chapter{Abstract}
+\label{{Abstract}
 \subfile{./caps/abstract}
 
 \chapter{Introducción}
+\label{Introducción}
 \subfile{./caps/introduccion}
 
 % #### - Parte teórica y fundamentación - ####%
@@ -171,11 +175,12 @@ Hubert J. Farnsworth \\
 %\subfile{caps/nfc}
 %
 %% #### - Desarrollo de la aplicación - #### %
-%\chapter{Autenticación en sistema ficticio}
-%\subfile{caps/aplicacion}
+\chapter{Autenticación en sistema ficticio}
+\label{Autenticación en sistema ficticio}
+\subfile{caps/aplicacion}
 %
 %% ### - Conclusiones y futuras mejoras - ### %
-%\chapter{Conclusiones}
+%%\chapter{Conclusiones}
 %\subfile{caps/conclusiones}
 
 % #### - Bibliografía & Referencias -  ###
