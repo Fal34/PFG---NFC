@@ -22,7 +22,7 @@
 \usepackage{quotchap}
 \usepackage{epsfig}
 \usepackage[all]{xy}
-
+\usepackage{float}
 
 \usepackage{wasysym}	% XBox / CheckedBox characters
 
@@ -143,12 +143,25 @@ Hubert J. Farnsworth \\
 \listoffigures
 
 \chapter{Resumen}
-\label{{Resumen}
+\label{Resumen}
 \subfile{./caps/resumen}
 
-\chapter{Abstract}
-\label{{Abstract}
+\label{Keywords}
+\begin{center}
+\textbf{Palabras clave}: \textit{Criptografía, Curvas elípticas, NFC, autenticación}.
+\end{center}
+
+\newpage
+\label{Abstract}
+\begin{center}
+\textbf{Abstract}
+\end{center}
 \subfile{./caps/abstract}
+
+\label{Keywords}
+\begin{center}
+\textbf{Keywords}: \textit{Cryptography, elliptic curves, NFC, authentication}.
+\end{center}
 
 \chapter{Introducción}
 \label{Introducción}
@@ -175,8 +188,8 @@ Hubert J. Farnsworth \\
 %\subfile{caps/nfc}
 %
 %% #### - Desarrollo de la aplicación - #### %
-\chapter{Autenticación en sistema ficticio}
-\label{Autenticación en sistema ficticio}
+\chapter{APP: Autenticación en un sistema ficticio}
+\label{APP: Autenticación en sistema ficticio}
 \subfile{caps/aplicacion}
 %
 %% ### - Conclusiones y futuras mejoras - ### %

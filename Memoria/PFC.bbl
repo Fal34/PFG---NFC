@@ -1,13 +1,53 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{java}
+Oracle Corporation.
+\newblock Software java.
+
+\bibitem{nfcSpecifications}
+NFC Forum.
+\newblock Nfc forum specifications.
+
+\bibitem{androidAPI21}
+Google Inc.
+\newblock Android apis - about version 5.0.
+
+\bibitem{androidAPI22}
+Google Inc.
+\newblock Android apis - about version 5.1.
+
+\bibitem{androidStudio}
+Google Inc.
+\newblock Android studio - the official ide for android.
+
+\bibitem{googleIcons}
+Google Inc.
+\newblock Material design icons.
+
+\bibitem{iso14443}
+ISO/IEC.
+\newblock Iso/iec standard 14443-3.
 
 \bibitem{lucena}
 Manuel~Jos{\'e} Lucena.
 \newblock Criptograf{\'\i}a y seguridad en computadores.
 \newblock {\em versi{\'o}n 0.7}, 5, 1999.
 
+\bibitem{mifare}
+MIFARE.
+\newblock Mifare ic - contactless smart cards.
+
+\bibitem{bouncyCastle}
+Legion of~the Bouncy Castle~Inc.
+\newblock Bouncy castle - api criptográfica.
+
 \bibitem{ramli2008iris}
 Mohamad Ramli, Nurul Akmar, Muhammad~Saufi Kamarudin, and Ariffuddin Joret.
 \newblock Iris recognition for personal identification.
 \newblock 2008.
+
+\bibitem{sqlite}
+SQLite.
+\newblock Sqlite - public domain embedded sql database engine.
 
 \end{thebibliography}
