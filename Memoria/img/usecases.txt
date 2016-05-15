@@ -1,0 +1,9 @@
+[User]-(Autenticarse en el sistema)
+[Administrador]-(Crear nuevo sistema)
+(Crear nuevo sistema)>(Asignar usuarios al sistema)
+(Asignar usuarios al sistema)<(Crear tarjeta identificativa)
+(Crear nuevo sistema)>(Ver usuarios del sistema)
+[Administrador]-(Reiniciar sistema)
+
+URL para modificar y crear los diagramas:
+http://yuml.me/diagram/usecase/draw

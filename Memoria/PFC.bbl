@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{javaSecurity}
+Oracle Corporation.
+\newblock Java security package.
+
 \bibitem{java}
 Oracle Corporation.
 \newblock Software java.
@@ -7,6 +11,10 @@ Oracle Corporation.
 \bibitem{nfcSpecifications}
 NFC Forum.
 \newblock Nfc forum specifications.
+
+\bibitem{eclipse}
+Eclipse Fundation.
+\newblock Eclipse.
 
 \bibitem{androidAPI21}
 Google Inc.
@@ -20,6 +28,10 @@ Google Inc.
 Google Inc.
 \newblock Android studio - the official ide for android.
 
+\bibitem{materialDesign}
+Google Inc.
+\newblock Material design guidelines.
+
 \bibitem{googleIcons}
 Google Inc.
 \newblock Material design icons.
@@ -27,6 +39,10 @@ Google Inc.
 \bibitem{iso14443}
 ISO/IEC.
 \newblock Iso/iec standard 14443-3.
+
+\bibitem{junit}
+JUnit.
+\newblock Junit.
 
 \bibitem{lucena}
 Manuel~Jos{\'e} Lucena.
@@ -41,6 +57,10 @@ MIFARE.
 Legion of~the Bouncy Castle~Inc.
 \newblock Bouncy castle - api criptográfica.
 
+\bibitem{yUML}
+Pocketworks.
+\newblock yuml diagrams.
+
 \bibitem{ramli2008iris}
 Mohamad Ramli, Nurul Akmar, Muhammad~Saufi Kamarudin, and Ariffuddin Joret.
 \newblock Iris recognition for personal identification.
@@ -49,5 +69,13 @@ Mohamad Ramli, Nurul Akmar, Muhammad~Saufi Kamarudin, and Ariffuddin Joret.
 \bibitem{sqlite}
 SQLite.
 \newblock Sqlite - public domain embedded sql database engine.
+
+\bibitem{gantt}
+GanttProject Team.
+\newblock Ganttproject.
+
+\bibitem{whatsappEncryption}
+Whatsapp.
+\newblock Whatsapp encryption overview.
 
 \end{thebibliography}
