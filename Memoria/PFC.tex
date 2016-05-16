@@ -27,7 +27,7 @@
 \usepackage{caption}
 
 \usepackage{wasysym}	% XBox / CheckedBox characters
-
+\usepackage{usecases} % Casos de uso
 \usepackage{makeidx}	%indice
 \usepackage{multicol,multirow}
 \setcounter{tocdepth}{3}
@@ -86,14 +86,12 @@
 
 %% Datos del PFC
 \newcommand{\titulo}{Seguridad utilizando dispositivos NFC}
+\newcommand{\tituloIngles}{Security using NFC devices}
 \newcommand{\autor}{Fidel Abascal López}
 \newcommand{\director}{Domingo Gómez Pérez}
 \newcommand{\tutor}{}
-\newcommand{\vocal}{Nombre Apellido1 Apellido2}
-\newcommand{\vocalsup}{Nombre Apellido1 Apellido2}
-\newcommand{\presidente}{Nombre Apellido1 Apellido2}
-\newcommand{\presidentesup}{Nombre Apellido1 Apellido2}
-\newcommand{\carrera}{Grado en Ingeniería Informática}
+\newcommand{\carrera}{GRADO EN INGENIERÍA INFORMÁTICA}
+\newcommand{\fecha}{Junio - 2016}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \title{\titulo}
 \author{\autor}
@@ -107,35 +105,38 @@
 \vspace*{-1in}
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[width=5cm]{./img/unicanLogo}
+\includegraphics[width=4cm]{./img/unicanLogo}
 \end{center}
 \end{figure}
 
-FACULTAD DE CIENCIAS\\
-\vspace*{0.15in}
-DEPARTAMENTO DE... \\
+\begin{LARGE}
+\textbf{
+Facultad \\
+De\\
+Ciencias\\}
+\end{LARGE}
+\vspace*{1in}
+\begin{huge}
+\textbf{\titulo} \\
+\tituloIngles \\
+\end{huge}
 \vspace*{0.6in}
 \begin{large}
-PHD THESIS:\\
+Trabajo de Fin de Grado\\
+para acceder al\\
+\vspace*{0.15in}
+\textbf{\carrera}\\
 \end{large}
-\vspace*{0.2in}
-\begin{Large}
-\textbf{EL TÍTULO DE LA TESIS ES MUY IMPORTANTE, ASÍ QUE, NO OLVIDES PONER UNO QUE SEA INTERESANTE Y ADECUADO PARA TU TESIS} \\
-\end{Large}
-\vspace*{0.3in}
-\begin{large}
-A Thesis submitted by Amy Wong for the degree of Doctor of Philosophy in the Mars University\\
-\end{large}
-\vspace*{0.3in}
-\rule{80mm}{0.1mm}\\
-\vspace*{0.1in}
-\begin{large}
-  \begin{flushleft}
-Supervised by: \\
-Hubert J. Farnsworth \\
-\end{flushleft}
+\vspace*{0.8in}
 
+\begin{large}
+\begin{flushright}
+Autor : \autor\\
+Director : \director\\
+\fecha
+\end{flushright}
 \end{large}
+
 \end{center}
 
 \end{titlepage}

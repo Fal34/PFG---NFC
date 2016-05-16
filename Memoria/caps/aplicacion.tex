@@ -177,15 +177,15 @@ Los casos de uso, cumpliendo las funcionalidades acordadas con el cliente, se co
 \begin{itemize}
 \item{Usuario}
 	\begin{itemize}
-	\item{Un usuario, supuesto trabajador de la empresa, poseedor de una tarjeta de identificación proveída por la administración del sistema, es capaz de autenticarse.}
+	\item{RF01 - Un usuario, supuesto trabajador de la empresa, poseedor de una tarjeta de identificación proveída por la administración del sistema, es capaz de autenticarse.}
 	\end{itemize}
 \item{Administrador}
 	\begin{itemize}
-	\item{La administración del sistema define las características del criptosistema que utiliza la aplicación.}
-	\item{Puede restaurar la información a los valores por defecto.}
-	\item{Puede ver los usuarios pertenecientes al sistema.}
-	\item{Es capaz de asignar usuarios al sistema creando las tarjetas identificadores.}
-	\item{Valida la información recogida de cada tarjeta y sobrescribe con la nueva información acorde al criptosistema empleado.}
+	\item{RF02 - La administración del sistema define las características del criptosistema que utiliza la aplicación.}
+	\item{RF03 - Puede restaurar la información a los valores por defecto.}
+	\item{RF04 - Puede ver los usuarios pertenecientes al sistema.}
+	\item{RF05 - Es capaz de asignar usuarios al sistema creando las tarjetas identificadores.}
+	\item{RF06 - Valida la información recogida de cada tarjeta y sobrescribe con la nueva información acorde al criptosistema empleado.}
 	\end{itemize}
 \end{itemize}
 
@@ -196,6 +196,289 @@ Como requisitos no funcionales se definen principalmente los siguientes:
 \item{Criptosistema: Compuesto por criptografía con curvas elípticas de alta seguridad y el sistema \textit{SKEY} para validaciones de un solo uso (\textit{véase apartado sobre \ref{App:Seguridad y criptología} la seguridad de la aplicación}). La plataforma utilizada puede modificar la curva elíptica implementada por el criptosistema.}
 \item{Elementos identificativos: Las tarjetas NFC contendrán la información asignada por el criptosistema. La información se escribirá a la hora e la asignación del usuario al sitema o en el momento de una validación correcta.}
 \end{itemize}
+
+Las definiciones en profundidad de estos casos de uso se muestran a continuación.
+
+\begin{usecase}
+\addtitle{Caso de uso}{Acceder al sistema} 
+%Primary Actor: Calls on the system to deliver its services.
+\addfield{Actor principal:}{Usuario/Empleado}
+
+%Stakeholders and Interests: Who cares about this use case and what do they want?
+\additemizedfield{\textit{Stakeholders} e interesados:}{
+	\item Usuario/Empleado: Validar su identidad para acceder a las instalaciones de la empresa.
+	\item Empresa: Autenticar inequívocamente a quienes acceden a emplazamiento de la empresa.
+}
+%Preconditions: What must be true on start and worth telling the reader?
+\additemizedfield{Precondiciones:}{
+\item El usuario dispone de una tarjeta NFC creada por el sistema.
+\item La aplicación se encuentra instalada en el dispositivo \textit{Android}.
+\item La aplicación posee un sistema de seguridad desplegado.
+\item El dispositivo cuenta con la tecnología NFC y en estado activo.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{} 
+
+%Postconditions: What must be true on successful completion and worth telling the reader
+\additemizedfield{Postcondiciones:}{
+\item La aplicación valida el contenido de la tarjeta NFC e informa al usuario del resultado.
+\item La aplicación reescribe la tarjeta NFC preparándola para su siguiente uso.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{}
+
+%Main Success Scenario: A typical, unconditional happy path scenario of success.
+\addscenario{Escenario principal de éxito:}{
+	\item[1] Se inicia el dispositivo.
+	\item[2] Se aproxima la tarjeta NFC al terminal para la lectura del contenido.
+	\item[3] La aplicación muestra un mensaje de validación confirmada y escribe el contenido oportuno para la próxima ocasión.
+}
+
+%Extensions: Alternate scenarios of success or failure.
+\addscenario{Extensiones:}{
+	\item[1] Se inicia la aplicación:
+		\begin{enumerate}
+		\item[1.] Se despliega el menú
+		\item[2.] Se selecciona la opción Verificar NFC
+		\end{enumerate}
+	\item[2] Se aproxima una tarjeta NFC que no es del tipo correcto o el contenido es vacío:
+		\begin{enumerate}
+		\item[1.] La aplicación muestra un mensaje de aviso
+		\item[2.] Vuelta al paso 1 del escenario principal.
+		\end{enumerate}
+	\item[3] Datos de la tarjeta NFC incorrectos:
+		\begin{enumerate}
+		\item[1.] El sistema muestra el de validación incorrecta.
+		\item[2.] Vuelta al paso 1 del escenario principal.
+		\end{enumerate}
+}
+
+%Frequency of Occurrence: Influences investigation, testing and timing of implementation.
+\addfield{Frecuencia de ocurrencia:}{Cada vez que un usuario del sistema desee autenticarse mediante su tarjeta NFC.}
+
+\end{usecase}
+
+\begin{usecase}
+\addtitle{Caso de uso}{Crear nuevo sistema} 
+%Primary Actor: Calls on the system to deliver its services.
+\addfield{Actor principal:}{Administrador}
+
+%Stakeholders and Interests: Who cares about this use case and what do they want?
+\additemizedfield{\textit{Stakeholders} e interesados:}{
+	\item Administrador: Definir un nuevo sistema de seguridad suplantando al actual.
+}
+%Preconditions: What must be true on start and worth telling the reader?
+\additemizedfield{Precondiciones:}{
+\item La aplicación se encuentra instalada en el dispositivo \textit{Android}.
+\item La aplicación posee un sistema de seguridad desplegado.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{} 
+
+%Postconditions: What must be true on successful completion and worth telling the reader
+\additemizedfield{Postcondiciones:}{
+\item La aplicación implementa una nueva definición del sistema utilizado. Cambiando las características de la curva elíptica a emplear en el futuro.
+\item No hay nuevos usuarios asignados en el nuevo sistema.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{}
+
+%Main Success Scenario: A typical, unconditional happy path scenario of success.
+\addscenario{Escenario principal de éxito:}{
+	\item[1] Se inicia el dispositivo.
+	\item[2] Se inicia la aplicación.
+	\item[3] Se abre el menú lateral.
+	\item[4] Se selecciona la opción Despliegue.
+	\item[5] Se selecciona la definición de una curva elíptica utilizando el desplegable.
+	\item[6] Se pulsa en crear.
+	\item[7] Se muestra un cuadro de confirmación.	
+	\item[8] Tras aceptar, se prepara el sistema para asignar nuevos usuarios con la nueva definición.	
+}
+
+%Extensions: Alternate scenarios of success or failure.
+\addscenario{Extensiones:}{
+	\item[4] Se pasa directamente al punto 6 del escenario principal:
+		\begin{enumerate}
+		\item[1.] La definición por elegida es la listada por defecto.
+		\end{enumerate}
+	\item[7] Pulsar en Cancelar:
+		\begin{enumerate}
+		\item[1.] Se cierra el cuadro de confirmación.
+		\item[2.] Se vuelve al punto 4 del escenario principal.
+		\end{enumerate}
+	\item[8] Error en la creación del sistema:
+		\begin{enumerate}
+		\item[1.] Se muestra un mensaje de error
+		\item[2.] Vuelta al paso 4 del escenario principal.
+		\end{enumerate}
+}
+
+%Frequency of Occurrence: Influences investigation, testing and timing of implementation.
+\addfield{Frecuencia de ocurrencia:}{Cada vez que se desee reiniciar los datos de la aplicación con una nueva definición de seguridad.}
+
+\end{usecase}
+
+\begin{usecase}
+\addtitle{Caso de uso}{Reiniciar sistema} 
+%Primary Actor: Calls on the system to deliver its services.
+\addfield{Actor principal:}{Administrador}
+
+%Stakeholders and Interests: Who cares about this use case and what do they want?
+\additemizedfield{\textit{Stakeholders} e interesados:}{
+	\item Desarrollador: Revertir todos los cambios respecto a la definición de ejemplo.
+}
+%Preconditions: What must be true on start and worth telling the reader?
+\additemizedfield{Precondiciones:}{
+\item La aplicación se encuentra instalada en el dispositivo \textit{Android}.
+\item La aplicación posee un sistema desplegado.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{} 
+
+%Postconditions: What must be true on successful completion and worth telling the reader
+\additemizedfield{Postcondiciones:}{
+\item La aplicación recupera la implementación del sistema de ejemplo.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{}
+
+%Main Success Scenario: A typical, unconditional happy path scenario of success.
+\addscenario{Escenario principal de éxito:}{
+	\item[1] Se inicia el dispositivo.
+	\item[2] Se inicia la aplicación.
+	\item[3] Se abre el menú lateral.
+	\item[4] Se selecciona la opción Despliegue.
+	\item[5] Se selecciona la pestaña de Base de datos.
+	\item[6] Se pulsa en el botón Restaurar Base de Datos.
+	\item[7] Se muestra un cuadro de confirmación.	
+	\item[8] Tras aceptar, se recupera el sistema de ejemplo inicial.
+}
+
+%Extensions: Alternate scenarios of success or failure.
+\addscenario{Extensiones:}{
+	\item[7] Pulsar en Cancelar:
+		\begin{enumerate}
+		\item[1.] Se cierra el cuadro de confirmación.
+		\item[2.] Se vuelve al punto 5 del escenario principal.
+		\end{enumerate}
+	\item[8] Error en la restauración del sistema:
+		\begin{enumerate}
+		\item[1.] Se muestra un mensaje de error
+		\item[2.] Vuelta al paso 5 del escenario principal.
+		\end{enumerate}
+}
+
+%Frequency of Occurrence: Influences investigation, testing and timing of implementation.
+\addfield{Frecuencia de ocurrencia:}{En cualquier momento que se desee.}
+
+\end{usecase}
+
+\begin{usecase}
+\addtitle{Caso de uso}{Ver usuarios del sistema} 
+%Primary Actor: Calls on the system to deliver its services.
+\addfield{Actor principal:}{Administrador}
+
+%Stakeholders and Interests: Who cares about this use case and what do they want?
+\additemizedfield{\textit{Stakeholders} e interesados:}{
+	\item Administrador: Listar la información de los usuarios del sistema.
+}
+%Preconditions: What must be true on start and worth telling the reader?
+\additemizedfield{Precondiciones:}{
+\item La aplicación se encuentra instalada en el dispositivo \textit{Android}.
+\item La aplicación posee un sistema desplegado.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{} 
+
+%Postconditions: What must be true on successful completion and worth telling the reader
+\additemizedfield{Postcondiciones:}{
+\item La aplicación muestra los usuarios activos del sistema .
+}
+%when multiple
+%\additemizedfield{Preconditions:}{}
+
+%Main Success Scenario: A typical, unconditional happy path scenario of success.
+\addscenario{Escenario principal de éxito:}{
+	\item[1] Se inicia el dispositivo.
+	\item[2] Se inicia la aplicación.
+	\item[3] Abrir el menú lateral.
+	\item[4] Seleccionar la opción Ver Usuarios.
+	\item[5] Se lista la tabla con la información de seguridad de los usuarios activos en el sistema.
+}
+
+%Extensions: Alternate scenarios of success or failure.
+\addscenario{Extensiones:}{
+	\item[4] No hay usuarios activos en el sistema:
+		\begin{enumerate}
+		\item[1.] Se muestra un mensaje indicándolo
+		\end{enumerate}
+}
+
+%Frequency of Occurrence: Influences investigation, testing and timing of implementation.
+\addfield{Frecuencia de ocurrencia:}{En cualquier momento que se desee.}
+
+\end{usecase}
+
+\begin{usecase}
+\addtitle{Caso de uso}{Asignar usuarios al sistema} 
+%Primary Actor: Calls on the system to deliver its services.
+\addfield{Actor principal:}{Administrador}
+
+%Stakeholders and Interests: Who cares about this use case and what do they want?
+\additemizedfield{\textit{Stakeholders} e interesados:}{
+	\item Administrador: Crear (escribir) tarjetas NFC para autenticar dentro del sistema generado a un empleado de la empresa.
+	\item Usuario/Empleado: Obtener una tarjeta NFC con el contenido adecuado.
+}
+%Preconditions: What must be true on start and worth telling the reader?
+\additemizedfield{Precondiciones:}{
+\item La aplicación se encuentra instalada en el dispositivo \textit{Android}.
+\item La aplicación posee un sistema desplegado.
+\item El dispositivo cuenta con la tecnología NFC y en estado activo.
+\item La tarjeta NFC objetivo contiene información por defecto (no está vacía) para evitar fallos de escritura.
+\item La aplicación dispone de un listado de usuarios generales de la empresa.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{} 
+
+%Postconditions: What must be true on successful completion and worth telling the reader
+\additemizedfield{Postcondiciones:}{
+\item Se vuelca el contenido de autenticación de un usuario recién añadido al sistema a una tarjeta NFC.
+}
+%when multiple
+%\additemizedfield{Preconditions:}{}
+
+%Main Success Scenario: A typical, unconditional happy path scenario of success.
+\addscenario{Escenario principal de éxito:}{
+	\item[1] Se inicia el dispositivo.
+	\item[2] Se inicia la aplicación.
+	\item[3] Pulsar en abrir el menú lateral.
+	\item[4] Seleccionar la opción Nuevo Usuario.
+	\item[5] Seleccionar un usuario que no esté asignado al sistema actual.
+	\item[6] Pulsar el botón Continuar.
+	\item[7] Se muestra un mensaje de confirmación.	
+	\item[8] Un mensaje de de información indica que la aplicación está preparada para escribir en la tarjeta. Se acerca la tarjeta para escribir.
+	\item[9] La aplicación ha escrito correctamente la información en la tarjeta NFC.
+}
+
+%Extensions: Alternate scenarios of success or failure.
+\addscenario{Extensiones:}{
+	\item[7] Pulsar en Cancelar:
+		\begin{enumerate}
+		\item[1.] Se cierra el cuadro de confirmación.
+		\item[2.] Se vuelve al punto 5 del escenario principal.
+		\end{enumerate}
+	\item[8] Fallo al escribir:
+		\begin{enumerate}
+		\item[1.] Se muestra un mensaje indicando el fallo de escritura.
+		\item[2.] No se añade el usuario al nuevo sistema.
+		\item[3.] Se prepara la escritura nuevamente, paso al punto 8 del escenario principal.		
+		\end{enumerate}		
+}
+
+%Frequency of Occurrence: Influences investigation, testing and timing of implementation.
+\addfield{Frecuencia de ocurrencia:}{Cuando se requiera asignar un usuario al sistema.}
+
+\end{usecase}
 
 \section{Diseño y aspecto}
 \label{App:Diseño y aspecto}
@@ -235,13 +518,32 @@ Contenido de las nfc de ejemplo, funcionamiento del SKEY y las curvas elípticas
 \section{Base de datos}
 \label{App:Base de datos}
 
-Tablas, contenido por defecto.
-Contenido de la base de datos de ejemplo, significado, referencias, etc
+La base de datos, mencionada en el apartado \ref{App:Materiales y tecnologías utilizadas}, es una pequeña \textit{SQLite}. Se utiliza este tipo de base de datos debido a la comodidad y simplicidad con la que trabaja en un proyecto \textit{Android}.
+\\\\\
+En el escenario virtual de la aplicación, en vez de esta base de datos se utilizaría una centralizada en los servidores de la empresa. Se realizarían conexiones seguras para no comprometer la información a enviar. Sin embargo, ésto no es necesario dentro del ámbito real ya que toda la información que se precisa de los servidores ficticios de la empresa se encuentran dentro de esta pequeña base de datos.
+\\\\\
+Dentro de esta base de datos se encuentra la información de la curva elíptica implementada y la clave privada asociada (\textit{véase el apartado sobre seguridad y critología \ref{App:Seguridad y criptología}}). También está la información de parte de los usuarios ficticios de la empresa. Por último, se encuentra una tabla referida a la información de cada usuario que compone los datos para poder validar el contenido de cada tarjeta NFC de cada usuario. En la figura \ref{img:database} se observa la distribución de tablas y la relación entre ellas (creado mediante la herramienta online \textit{GenMyModel}\cite{diagramaDBOnline}). Posteriormente en la figura \ref{img:databaseScript} se observa el \textit{script} de creación en lenguaje \textit{SQL}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{./img/database}
+  \caption{Representación de la base de datos implementada.}
+  \label{img:database}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/databaseScript}
+  \caption{Script para la creación de la base de datos.}
+  \label{img:databaseScript}
+\end{figure}
+
+El contenido por defecto del sistema se adecua a la implementación de la curva elíptica \(c2pnb163v1\) (cuyos detalles se pueden encontrar en \cite{definicionCurvasF2M}). La clave por defecto es un número entero de 160 bits que es el siguiente: \(838828326113658401440043399564525405856963575389\). Los distintos valores de los campos \textit{P}, \textit{kP}, \textit{Q} y \textit{Set Q}, \textit{QkP} corresponden con datos válidos del sistema utilizado y de puntos aleatorios de la curva generados bajo la clave mencionada.
 
 \section{Aplicación desarrollada}
 \label{App:Aplicación desarrollada}
 
-Mayormente se ha repartido la aplicación en fragmentos del contenido principal.
+La aplicación final se compone principalmente de una actividad principal que dispone del menú lateral, la barra superior de acciones y un contenedor que va modificándose en función de la situación. En las siguientes secciones se muestra el contenido, utilización, significado y ejemplos de cada uno de estos apartados que compondrán los datos que se muestran en el contenedor.
 
 \subsection{Inicio}
 \label{App:AD:Inicio}

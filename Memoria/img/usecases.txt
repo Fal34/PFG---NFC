@@ -1,9 +1,63 @@
-[User]-(Autenticarse en el sistema)
+[Usuario]-(Acceder al sistema)
 [Administrador]-(Crear nuevo sistema)
 (Crear nuevo sistema)>(Asignar usuarios al sistema)
-(Asignar usuarios al sistema)<(Crear tarjeta identificativa)
+(Asignar usuarios al sistema)>(Crear tarjeta identificativa)
+(Asignar usuarios al sistema)<(Modificar número de accesos)
 (Crear nuevo sistema)>(Ver usuarios del sistema)
 [Administrador]-(Reiniciar sistema)
 
+
 URL para modificar y crear los diagramas:
 http://yuml.me/diagram/usecase/draw
+
+\begin{usecase}
+\addtitle{Caso de uso}{Acceder al sistema} 
+%Primary Actor: Calls on the system to deliver its services.
+\addfield{Actor principal:}{Usuario/Empleado}
+
+%Stakeholders and Interests: Who cares about this use case and what do they want?
+\additemizedfield{\textit{Stakeholders} e interesados:}{
+	\item Usuario/Empleado: Validar su identidad para acceder a las instalaciones de la empresa.
+	\item Empresa: Autenticar inequívocamente a quienes acceden a emplazamiento de la empresa.
+}
+%Preconditions: What must be true on start and worth telling the reader?
+\additemizedfield{Precondiciones:}{
+\item El usuario dispone de una tarjeta NFC creada por el sistema.
+\item La aplicación se encuentra instalada en el dispositivo \textit{Android}.
+\item La aplicación posee un sistema de seguridad desplegado.
+}}
+%when multiple
+%\additemizedfield{Preconditions:}{} 
+
+%Postconditions: What must be true on successful completion and worth telling the reader
+\additemizedfield{Postconditions:}{
+\item La aplicación valida el contenido de la tarjeta NFC e informa al usuario del resultado.
+\item La aplicación reescribe la tarjeta NFC preparándola para su siguiente uso.
+}}
+%when multiple
+%\additemizedfield{Preconditions:}{}
+
+%Main Success Scenario: A typical, unconditional happy path scenario of success.
+\addscenario{Escenario principal de éxito:}{
+	\item The first action
+	\item The second action
+}
+
+%Extensions: Alternate scenarios of success or failure.
+\addscenario{Extensiones:}{
+	\item[2.a] Invalid login data:
+		\begin{enumerate}
+		\item[1.] System shows failure message
+		\item[2.] User returns to step 1
+		\end{enumerate}
+	\item[5.a] Invalid subsriber data:
+		\begin{enumerate}
+		\item[1.] System shows failure message
+		\item[2.] User returns to step 2 and corrects the errors
+		\end{enumerate}
+}
+
+%Frequency of Occurrence: Influences investigation, testing and timing of implementation.
+\addfield{Frecuencia de ocurrencia:}{Cada vez que un usuario del sistema desee autenticarse mediante su tarjeta NFC.}
+
+\end{usecase}

@@ -8,6 +8,10 @@ Oracle Corporation.
 Oracle Corporation.
 \newblock Software java.
 
+\bibitem{definicionCurvasF2M}
+Technische~Universität Darmstadt.
+\newblock Curves over gf(2m) defined by ansi x9.62.
+
 \bibitem{nfcSpecifications}
 NFC Forum.
 \newblock Nfc forum specifications.
@@ -15,6 +19,10 @@ NFC Forum.
 \bibitem{eclipse}
 Eclipse Fundation.
 \newblock Eclipse.
+
+\bibitem{diagramaDBOnline}
+GenMyModel.
+\newblock Genmymodel modeling platform.
 
 \bibitem{androidAPI21}
 Google Inc.
