@@ -4,12 +4,12 @@
 \section{Introducción}
 \label{App:Introducción}
 
-Anteriormente se han explicado los conocimientos y términos generales relacionados con la seguridad en la autenticidad NFC basada en criptología con curvas elípticas. A continuación se muestra la aplicación de dichos conocimientos en un proyecto software experimental. El objetivo es demostrar la capacidad de los dispositivos NFC para, de la mano de la criptografía con curvas elípticas, llegar a desarrollar un sistema de autenticación óptimo y fiable.\\
-
-Tanto los nombres, librerías, herramientas, así como el resto del material utilizado se describirán a continuación. A su vez, siguiendo un estándar de desarrollo software basado en metodologías ágiles, se mostrará la utilizada para éste proyecto. Para ello,  el autor y director de este TFG (Fidel Abascal y Domingo Gómez) hemos actuado y ejercido tanto de cliente como de contratado para el desarrollo de la aplicación. \\
-
-Dentro de un ámbito ficticio, se plantea una empresa llamada \textbf{Alpha - Consultora S.A.}\footnote{Cualquier similitud con la realidad es mera coincidencia}, nueva potencia local dentro del campo de la seguridad bancaria, que ha cosechado unos excelentes resultados a lo largo de sus 2 años de existencia. Cuenta con más de 40 trabajadores y su crecimiento y expansión es notoria. Tanto es el éxito de esta compañía que, para dar cabida a su plantilla, ha decidido trasladarse a una nueva sede más moderna, amplia y mejor ubicada. La empresa, antes de instalarse en la nueva sede, decide contratar a unos expertos en seguridad para gestionar el control de accesos mediante un sistema de tarjetas y lectores en las entradas; teniendo en cuenta una inversión mínima pero garantizando un alto grado de seguridad. \\
-
+Anteriormente se han explicado los conocimientos y términos generales relacionados con la seguridad en la autenticidad NFC basada en criptología con curvas elípticas. A continuación se muestra la aplicación de dichos conocimientos en un proyecto software experimental. El objetivo es demostrar la capacidad de los dispositivos NFC para, de la mano de la criptografía con curvas elípticas, llegar a desarrollar un sistema de autenticación óptimo y fiable.
+\\\\
+Tanto los nombres, librerías, herramientas, así como el resto del material utilizado se describirán a continuación. A su vez, siguiendo un estándar de desarrollo software basado en metodologías ágiles, se mostrará la utilizada para éste proyecto. Para ello,  el autor y director de este TFG (Fidel Abascal y Domingo Gómez) hemos actuado y ejercido tanto de cliente como de contratado para el desarrollo de la aplicación. 
+\\\\
+Dentro de un ámbito ficticio, se plantea una empresa llamada \textbf{Alpha - Consultora S.A.}\footnote{Cualquier similitud con la realidad es mera coincidencia}, nueva potencia local dentro del campo de la seguridad bancaria, que ha cosechado unos excelentes resultados a lo largo de sus 2 años de existencia. Cuenta con más de 40 trabajadores y su crecimiento y expansión es notoria. Tanto es el éxito de esta compañía que, para dar cabida a su plantilla, ha decidido trasladarse a una nueva sede más moderna, amplia y mejor ubicada. La empresa, antes de instalarse en la nueva sede, decide contratar a unos expertos en seguridad para gestionar el control de accesos mediante un sistema de tarjetas y lectores en las entradas; teniendo en cuenta una inversión mínima pero garantizando un alto grado de seguridad.
+\\\\
 Tras buscar incesantemente recurren a la empresa \textbf{F-NFC}. Una vez realizado el estudio por parte de F-NFC, se pone en consonancia un acuerdo para elaborar una aplicación que genere información que autentifique a un usuario de la empresa \textit{Alpha} y sea reconocido de forma unívoca para permitir su acceso a la sede. La infraestructura de la empresa propietaria de la nueva sede corresponde a la figura \ref{img:infraestructura}.
 
 \begin{figure}[!ht]
@@ -512,8 +512,51 @@ Siguiendo el mismo ejemplo, el verde en marcas de alimentos se utiliza para repr
 \section{Seguridad y criptología}
 \label{App:Seguridad y criptología}
 
-hablar de qué ocurre al tener texto plano en las nfc-t en vez de las mifare classic
-Contenido de las nfc de ejemplo, funcionamiento del SKEY y las curvas elípticas
+La seguridad utilizada se basa en la criptología con curvas elípticas. Para la implementación del criptosistema se han utilizado las clases de la librería \textit{Bouncy Castle} y una interfaz \textit{AppEllipticCurveI} a implementar con los métodos necesarios para la aplicación.
+\\\\
+El flujo se simplifica básicamente en asignar a los usuarios del sistema un punto $P$ aleatorio en una curva elíptica dentro de un campo finito $G(F(2^m))$. Las curvas están delimitadas por un conjunto de nombres de curvas ya definidas que cumplen ciertas características de seguridad (orden de la curva de más de 130 \textit{bits}) y capacidad objetivo (codificaciones no superiores a la capacidad de las tarjetas NFC). Las curvas siguen diferentes estándares y se cargan en función del nombre que se les atribuye.
+\\\\
+Los puntos $P$ obtenidos se multiplican por una variable aleatoria privada $k$ de 160 \textit{bits} de tamaño obteniendo $kP$. Siguiendo el método \textit{SKEY}, se multiplica el resultado $kP$ tantas veces como usos se hayan indicado a la hora de la creación del punto $P$ (\textit{véase el apartado de la aplicación \ref{App:AD:Nuevo usuario} sobre la creación de usuarios}). Con ello se computa el valor $QkP$ que es un punto en la curva. Computar $kP$ es sencillo, sin embargo, obtener la variable $k$ es computacionalmente muy complejo debido al problema del logaritmo discreto. Para utilizar códigos de un solo uso se computa $Q$ veces la suma de $kP$ para almacenar en la base de datos el punto $(Q+1)kP$ asociado a un usuario de la aplicación; a su vez, se escribe en la tarjeta NFC el valor $QkP$ y el identificador del usuario.
+\\\\
+A la hora de validar la información de la tarjeta se obtiene la codificación del punto $QkP$ de la tarjeta NFC. A este punto se le añade el punto original $kP$ y se comprueba igual a $(Q+1)kP$ de la base de datos. Si coincide se valida la información con lo que se prepara el código del siguiente uso, que se trata de $(X-1)kP$ y se escribe en la tarjeta (guardando el valor comprobante de $(X+1)kP$ hasta alcanzar $kP$, siendo $X$ el uso actual. Una vez agotados los usos se realiza automáticamente la asignación de un nuevo punto al usuario con los $Q$ usos elegidos originalmente.
+\\\\
+Se muestra en la figura \ref{img:eci1} y \ref{img:eci2} la estructura de la interfaz mencionada junto a la documentación de cada uno de los métodos que la componen.
+ 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/eci1}
+  \caption{Interfaz AppEllipticCurveI que se implementa en la aplicación (I).}
+  \label{img:eci1}
+\end{figure}
+ 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/eci2}
+  \caption{Interfaz AppEllipticCurveI que se implementa en la aplicación (II).}
+  \label{img:eci2}
+\end{figure}
+
+Dentro de la implementación es oportuno comentar el método \textit{AddCustomPoints} el cuál es la realización por cuenta propia del método de suma de puntos en una curva elíptica en campos finitos del tipo \(GF(2^m)\). La figura \ref{img:addPointsCustom} muestra en detalle la suma implementada.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{./img/addPointsCustom}
+  \caption{Suma de puntos implementada en java.}
+  \label{img:addPointsCustom}
+\end{figure}
+
+Básicamente se divide en dos partes: si los puntos pasados por parámetro son iguales (duplicar el punto) y o si son distintos. Para el caso de puntos iguales, se realiza la llamada al método \textit{twice()} de la clase \textit{ECPoint.F2m} de la librería de \textit{Bouncy Castle}. Por el contrario, en el caso de puntos diferentes, se realiza la suma de puntos en curva elíptica tras unas comprobaciones previas. La fórmula utilizada y comprobada respecto a la realizada internamente por la librería es la siguiente:\\
+
+\begin{center}
+$y^2 + xy= x^3 +ax^2 + b\ (mod\ n) \equiv E(G(2^m))$\\
+$P=(x_{1},y_{1}), Q=(x_{2},y_{2}), R = P+Q = (x_{3},y_{3})$\\
+$P,Q,R\in E(GF(2^m))$\\
+$\lambda=(y_{1}+y_{2})/(x_{1}+x_{2})$\\
+$x_{3}=\lambda^2+\lambda+x_{1}+x_{2}+a$\\
+$y_{3}=\lambda*(x_{1}+x_{3})+x_{3}+y_{1}$\\
+\end{center}
+
+La seguridad reside en la privacidad del elemento $k$ difícilmente obtenible pese a que los demás elementos sean públicos gracias a las curvas elípticas en campos finitos y al uso de \textit{SKEY} para utilizar códigos únicos de un solo uso. En el escenario real definido en el apartado \ref{App:Escenario} se utilizaría una comunicación segura de la clave $k$ y otra clave $q$ también empleando curvas elípticas. La idea simplificada es la misma, obtener el valor $k$ de $kP$ es difícilmente computable. En el anexo I \ref{AnexoI} se muestra el código de ejemplo de una comunicación de claves de este tipo. Con ésta implementación se podrían comunicar los valores de forma segura entre los tornos de seguridad y los servidores de comprobación y validación.
 
 \section{Base de datos}
 \label{App:Base de datos}
@@ -599,9 +642,24 @@ Para la comprobación y consecución de pruebas unitarias se ha elaborado un pro
 \\\\
 En cada uno de los métodos de la clase principal se ha testeado que su ejecución en distintos ámbitos y condiciones devuelve los resultados esperados cubriendo un alto porcentaje de código. Las pruebas se han centrado en el \textit{framework} de pruebas unitarias \textit{JUnit}\cite{junit} en su versión 4 elaborada para \textit{Eclipse}\cite{eclipse}.
 \\\\
-La descripción básica de la clase y su documentación es la recogida por la interfaz que implementa...
+La descripción básica de la clase y su documentación es la recogida por la interfaz que implementa (la descripción en detalle de la clase de puede encontrar en el apartado \ref{App:Seguridad y criptología}). El resultado de los test JUnit se pueden observar en la figura \ref{img:junitTest} con una consecución de cobertura del código de más del 96\% realizado con el complemento \textit{EclEmma}\cite{eclemma} para este propósito. En la misma figura se muestra la prueba de consecución de cobertura código la clase objetivo. 
 
-<Crear interfaz y mostrar pruebas junit de esa clase>
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{./img/junitTest}}
+  \hfill
+  \subfloat{\includegraphics[width=0.5\textwidth]{./img/coveredCode}}
+  \caption{Resultado del test JUnit y cobertura de código alcanzada durante el test JUnit.}
+  \label{img:junitTest}
+\end{figure}
 
+En la realización de estas pruebas unitarias de la clase que implementa la interfaz \textit{AppEllipticCurveI}, clase principal que implementa la seguridad de la aplicación, se ha utilizado diferentes pruebas de ejecución del código utilizando \textit{Java Reflection}\cite{javaReflection} cuando se ha considerado oportuno. A modo de ejemplo se muestra en la figura el código del método principal \textit{loadEC} para la carga de una curva elíptica en el sistema.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{./img/loadCurveTest}
+  \caption{Script para el test de la creación de una curva elíptica.}
+  \label{img:loadCurveTest}
+\end{figure}
 
 \end{document}

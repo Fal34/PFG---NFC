@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{javaReflection}
+Oracle Corporation.
+\newblock Java reflection.
+
 \bibitem{javaSecurity}
 Oracle Corporation.
 \newblock Java security package.
@@ -12,6 +16,10 @@ Oracle Corporation.
 Technische~Universität Darmstadt.
 \newblock Curves over gf(2m) defined by ansi x9.62.
 
+\bibitem{eclemma}
+EclEmma.
+\newblock Java code coverage for eclipse.
+
 \bibitem{nfcSpecifications}
 NFC Forum.
 \newblock Nfc forum specifications.
@@ -23,6 +31,10 @@ Eclipse Fundation.
 \bibitem{diagramaDBOnline}
 GenMyModel.
 \newblock Genmymodel modeling platform.
+
+\bibitem{fengHaoCode}
+Feng Hao.
+\newblock J-pake as ecdsa implementation.
 
 \bibitem{androidAPI21}
 Google Inc.

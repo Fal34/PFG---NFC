@@ -9,5 +9,11 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Diagrama Gantt : Visualizaci\IeC {\'o}n Parte II \relax }}{17}{figure.caption.10}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Casos de uso\relax }}{19}{figure.caption.11}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Elementos de dise\IeC {\~n}o: Muestra de la disposici\IeC {\'o}n espacial del men\IeC {\'u} y estructura b\IeC {\'a}sica de la aplicaci\IeC {\'o}n\relax }}{28}{figure.caption.12}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Representaci\IeC {\'o}n de la base de datos implementada.\relax }}{30}{figure.caption.13}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Script para la creaci\IeC {\'o}n de la base de datos.\relax }}{30}{figure.caption.14}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Interfaz AppEllipticCurveI que se implementa en la aplicaci\IeC {\'o}n (I).\relax }}{30}{figure.caption.13}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Interfaz AppEllipticCurveI que se implementa en la aplicaci\IeC {\'o}n (II).\relax }}{30}{figure.caption.14}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Suma de puntos implementada en java.\relax }}{31}{figure.caption.15}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Representaci\IeC {\'o}n de la base de datos implementada.\relax }}{32}{figure.caption.16}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Script para la creaci\IeC {\'o}n de la base de datos.\relax }}{33}{figure.caption.17}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Resultado del test JUnit y cobertura de c\IeC {\'o}digo alcanzada durante el test JUnit.\relax }}{35}{figure.caption.20}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Script para el test de la creaci\IeC {\'o}n de una curva el\IeC {\'\i }ptica.\relax }}{35}{figure.caption.21}
+\addvspace {10\p@ }
