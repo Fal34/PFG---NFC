@@ -591,49 +591,148 @@ La aplicación final se compone principalmente de una actividad principal que di
 \subsection{Inicio}
 \label{App:AD:Inicio}
 
-Pagina XX
+La página de inicio será el contenido por defecto del contenedor. Se presenta el logo de la aplicación junto a unas referencias a la autoría. La figura \ref{img:app:inicio} muestra la visualización en cuestión. También se puede acceder a esta vista desde el menú lateral (\textit{véase sección \ref{App:Menu}}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./img/app/pantallaPrincipal}
+  \caption{Vista de la pantalla por defecto 'Inicio'.}
+  \label{img:app:inicio}
+\end{figure}
 
 \subsection{Menú}
 \label{App:Menu}
 
-Pagina XX
+Para acceder al menú de la aplicación se puede pulsar en el extremo superior-izquierdo de la pantalla o deslizar el dedo desde el lateral izquierdo hacia el derecho. Se listan las posibles opciones de la aplicación como se observa en la figura \ref{img:app:menuDesplegado}.
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/accesoMenu}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/menuDesplegado}}
+  \caption{Acceso y vista del menú desplegado}
+  \label{img:app:menuDesplegado}
+\end{figure}
 
 \subsection{Acerca de}
 \label{App:AD:Acerca de}
 
-Pagina XX
+Como elemento del menú se puede acceder a la pantalla donde se visualiza en el contenedor principal la información relacionada con la aplicación. La figura \ref{img:app:acercaDe} muestra la visualización de esta pantalla.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./img/app/acercaDe}
+  \caption{Vista de la pantalla 'Acerca De'.}
+  \label{img:app:acercaDe}
+\end{figure}  
 
 \subsection{Despliegue}
 \label{App:AD:Despliegue}
 
-Pagina XX
+Accediendo a la parte administrativa de la aplicación desde el menú llamada despliegue. En ella se muestra la pestaña del sistema y de la base de datos que se mostrarán al siguientes secciones.
 
 \subsubsection{Sistema}
 \label{App:AD:D:Sistema}
 
-Pagina XX
+En la pestaña de sistema se muestra una advertencia de desplegar una nueva configuración de seguridad del criptosistema. A su vez, se puede escoger la definición de la curva a implementar antes de crear una nueva. Cuando se pulsa en la creación del nuevo sistema se muestra un mensaje de confirmación previo como se aprecia en la figura \ref{img:app:sistema}.
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueSistema}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despligueSistemaDialog}}
+  \caption{Pantalla de despliegue del sistema.}
+  \label{img:app:sistema}
+\end{figure}
+
 
 \subsubsection{Base de datos}
 \label{App:AD:D:Base de dtaos}
 
-Pagina XX
+Otra funcionalidad de la aplicación es la de restaurar la base de datos con los parámetros por defecto. Antes de pulsar en el botón de restauración se pedirá una confirmación, finalizando con un mensaje como se puede observar en las figuras \ref{img:app:baseDatos1} y \ref{img:app:baseDatos2} .
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./img/app/despliegueBaseDeDatos}
+  \caption{Pantalla 'Base de Datos'.}
+  \label{img:app:baseDatos1}
+\end{figure}  
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosDialog}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosMensaje}}
+  \caption{Restauración de los datos por defecto.}
+  \label{img:app:baseDatos2}
+\end{figure}
 
 \subsection{Nuevo usuario}
 \label{App:AD:Nuevo usuario}
 
-Pagina XX
+Mediante el menú se accede a la pantalla de creación de nuevo usuario. En esta pantalla se listará en un desplegable los usuarios disponibles (no asignados al sistema actual) y un \textit{spinner} para seleccionar el número de usos que dispondrá el usuario por punto $P$ (ver el apartado de seguridad y criptología \ref{App:Seguridad y criptología}). Cuando se hayan seleccionado los datos se muestra un mensaje de confirmación y aviso para tener a mano la tarjeta NFC en la que se va a grabar la información. La tarjeta deberá seguir el requisito de no estar vacía. La próxima vez que se acerque una tarjeta al terminal escribirá el contenido. Al escribir en la tarjeta se mostrará la pantalla de verificación. En las siguientes figuras \ref{img:app:nuevoUsuario1} y \ref{img:app:nuevoUsuario2} se puede apreciar el funcionamiento.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./img/app/nuevoUsuario}
+  \caption{Pantalla 'Nuevo usuario'.}
+  \label{img:app:nuevoUsuario1}
+\end{figure}  
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioDialog}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioAgregado}}
+  \caption{Aviso de creación de un nuevo usuario y escritura de la tarjeta NFC.}
+  \label{img:app:nuevoUsuario2}
+\end{figure}
 
 \subsection{Ver usuarios}
 \label{App:AD:Ver usuarios}
 
-Pagina XX
+Desde el menú se puede acceder a la pestaña de ver usuarios. Donde se muestra la información de la base de datos relativa  los usuarios del sistema actual. La figura \ref{img:app:verUsuarios} muestra la vista con varios usuarios y con un solo usuario en el sistema. Si no hubiera usuarios mostraría un mensaje avisando de que no hay usuarios disponibles.
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/verUsuarios}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioInsertado}}
+  \caption{Listado de varios usuarios y un usuario del sistema.}
+  \label{img:app:verUsuarios}
+\end{figure}
 
 \subsection{Verificación}
 \label{App:Verificacion}
 
-Pagina XX
+Por último, el menú dispone la pestaña de verificación. En esta pestaña se avisa de que se puede aproximar una tarjeta NFC (con NFC activo en el dispositivo \textit{Android}) como indica la figura \ref{img:app:verificarNFC}.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./img/app/verificarNFC}
+  \caption{Pantalla 'Verificar NFC'.}
+  \label{img:app:verificarNFC}
+\end{figure}  
+
+Cuando el dispositivo detecta el contacto de una tarjeta NFC se lanzará automáticamente esta pantalla en la aplicación. Por lo que no es necesario encontrarse en esta pestaña cuando se acerque la tarjeta al dispositivo. Si el contenido es correcto se mostrará un mensaje de validación, sino mostrará un mensaje de error, ambos comportamientos se ven en la figura \ref{img:app:verificarNFC1}. Sin embargo, puede darse el caso de que no se escriba el nuevo contenido en la tarjeta tras verificarla. De esta forma, no se muestra el mensaje de escritura con éxito hasta que no se vuelva a acercar otra vez la tarjeta NFC, el comportamiento se observa en la figura \ref{img:app:verificarNFC2}.
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionExitoEscrito}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionFallida}}
+  \caption{Verificar NFC válida común y fallida.}
+  \label{img:app:verificarNFC1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/ValidacionExitoNoEscrito}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/escrituraPostLectura}}
+  \caption{Verificar NFC válida, con escritura realizada y sin ella.}
+  \label{img:app:verificarNFC2}
+\end{figure}
 
 \section{Pruebas}
 \label{App:Pruebas}
@@ -647,7 +746,7 @@ La descripción básica de la clase y su documentación es la recogida por la in
 \begin{figure}[H]
   \centering
   \subfloat{\includegraphics[width=0.45\textwidth]{./img/junitTest}}
-  \hfill
+  \null\hfill
   \subfloat{\includegraphics[width=0.5\textwidth]{./img/coveredCode}}
   \caption{Resultado del test JUnit y cobertura de código alcanzada durante el test JUnit.}
   \label{img:junitTest}

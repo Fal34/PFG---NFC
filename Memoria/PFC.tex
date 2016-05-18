@@ -164,9 +164,15 @@ Director : \director\\
 
 \end{titlepage}
 %###### - Fin Portada - ######
+\begingroup
+\let\cleardoublepage\clearpage
 \tableofcontents{}
+\endgroup
 
+\begingroup
+\let\cleardoublepage\clearpage
 \listoffigures
+\endgroup
 
 \chapter*{Resumen}
 \label{Resumen}
@@ -194,24 +200,9 @@ Director : \director\\
 \subfile{./caps/introduccion}
 
 % #### - Parte teórica y fundamentación - ####%
-
-
-%\chapter{Motivación}
-%\subfile{caps/motivacion}
-%\chapter{Objetivo}
-%\subfile{caps/objetivo}
-%\chapter{Criptología}
-%\subfile{caps/criptologia}
-%\chapter{Seguridad}
-%\subfile{caps/seguridad}
-%\chapter{Protocolos simétricos y asimétricos}
-%\subfile{caps/protocolos}
-%\chapter{Logaritmos discretos}
-%\subfile{caps/logaritmos}
-%\chapter{Criptología con curvas elípticas - ECC}
-%\subfile{caps/criptografiaECC}
-%\chapter{Tecnología NFC}
-%\subfile{caps/nfc}
+\chapter{Elementos teóricos}
+\label{Elementos teoricos}
+\subfile{caps/teoria}
 %
 %% #### - Desarrollo de la aplicación - #### %
 \chapter{APP: Autenticación en un sistema ficticio}

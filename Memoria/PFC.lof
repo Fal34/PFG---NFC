@@ -1,19 +1,32 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Infraestructura del sistema ficticio.\relax }}{12}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Smartphone One Plus One - Never Settle\relax }}{14}{figure.caption.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces NFC Tag - NTAG213\relax }}{15}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagrama Gantt - Subdivisi\IeC {\'o}n de elementos de la aplicaci\IeC {\'o}n para su desarrollo\relax }}{16}{figure.caption.8}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagrama Gantt : Visualizaci\IeC {\'o}n Parte I \relax }}{17}{figure.caption.9}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Diagrama Gantt : Visualizaci\IeC {\'o}n Parte II \relax }}{17}{figure.caption.10}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Casos de uso\relax }}{19}{figure.caption.11}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Elementos de dise\IeC {\~n}o: Muestra de la disposici\IeC {\'o}n espacial del men\IeC {\'u} y estructura b\IeC {\'a}sica de la aplicaci\IeC {\'o}n\relax }}{28}{figure.caption.12}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Interfaz AppEllipticCurveI que se implementa en la aplicaci\IeC {\'o}n (I).\relax }}{30}{figure.caption.13}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Interfaz AppEllipticCurveI que se implementa en la aplicaci\IeC {\'o}n (II).\relax }}{30}{figure.caption.14}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Suma de puntos implementada en java.\relax }}{31}{figure.caption.15}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Representaci\IeC {\'o}n de la base de datos implementada.\relax }}{32}{figure.caption.16}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Script para la creaci\IeC {\'o}n de la base de datos.\relax }}{33}{figure.caption.17}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Resultado del test JUnit y cobertura de c\IeC {\'o}digo alcanzada durante el test JUnit.\relax }}{35}{figure.caption.20}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Script para el test de la creaci\IeC {\'o}n de una curva el\IeC {\'\i }ptica.\relax }}{35}{figure.caption.21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Infraestructura del sistema ficticio.\relax }}{12}{figure.caption.5}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Smartphone One Plus One - Never Settle\relax }}{14}{figure.caption.6}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces NFC Tag - NTAG213\relax }}{15}{figure.caption.7}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama Gantt - Subdivisi\IeC {\'o}n de elementos de la aplicaci\IeC {\'o}n para su desarrollo\relax }}{16}{figure.caption.8}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama Gantt : Visualizaci\IeC {\'o}n Parte I \relax }}{17}{figure.caption.9}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama Gantt : Visualizaci\IeC {\'o}n Parte II \relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Casos de uso\relax }}{19}{figure.caption.11}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Elementos de dise\IeC {\~n}o: Muestra de la disposici\IeC {\'o}n espacial del men\IeC {\'u} y estructura b\IeC {\'a}sica de la aplicaci\IeC {\'o}n\relax }}{28}{figure.caption.12}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Interfaz AppEllipticCurveI que se implementa en la aplicaci\IeC {\'o}n (I).\relax }}{30}{figure.caption.13}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Interfaz AppEllipticCurveI que se implementa en la aplicaci\IeC {\'o}n (II).\relax }}{30}{figure.caption.14}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Suma de puntos implementada en java.\relax }}{31}{figure.caption.15}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Representaci\IeC {\'o}n de la base de datos implementada.\relax }}{32}{figure.caption.16}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Script para la creaci\IeC {\'o}n de la base de datos.\relax }}{33}{figure.caption.17}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Vista de la pantalla por defecto 'Inicio'.\relax }}{34}{figure.caption.18}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Acceso y vista del men\IeC {\'u} desplegado\relax }}{35}{figure.caption.19}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Vista de la pantalla 'Acerca De'.\relax }}{36}{figure.caption.20}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Pantalla de despliegue del sistema.\relax }}{37}{figure.caption.22}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Pantalla 'Base de Datos'.\relax }}{38}{figure.caption.24}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Restauraci\IeC {\'o}n de los datos por defecto.\relax }}{38}{figure.caption.25}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Pantalla 'Nuevo usuario'.\relax }}{39}{figure.caption.26}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Aviso de creaci\IeC {\'o}n de un nuevo usuario y escritura de la tarjeta NFC.\relax }}{40}{figure.caption.27}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Listado de varios usuarios y un usuario del sistema.\relax }}{41}{figure.caption.28}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Pantalla 'Verificar NFC'.\relax }}{42}{figure.caption.29}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Verificar NFC v\IeC {\'a}lida com\IeC {\'u}n y fallida.\relax }}{43}{figure.caption.30}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Verificar NFC v\IeC {\'a}lida, con escritura realizada y sin ella.\relax }}{43}{figure.caption.31}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Resultado del test JUnit y cobertura de c\IeC {\'o}digo alcanzada durante el test JUnit.\relax }}{44}{figure.caption.32}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Script para el test de la creaci\IeC {\'o}n de una curva el\IeC {\'\i }ptica.\relax }}{45}{figure.caption.33}
 \addvspace {10\p@ }
