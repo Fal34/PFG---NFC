@@ -16,6 +16,11 @@ Oracle Corporation.
 Technische~Universität Darmstadt.
 \newblock Curves over gf(2m) defined by ansi x9.62.
 
+\bibitem{diffie1976new}
+Whitfield Diffie and Martin~E Hellman.
+\newblock New directions in cryptography.
+\newblock {\em Information Theory, IEEE Transactions on}, 22(6):644--654, 1976.
+
 \bibitem{eclemma}
 EclEmma.
 \newblock Java code coverage for eclipse.
@@ -77,6 +82,10 @@ MIFARE.
 Legion of~the Bouncy Castle~Inc.
 \newblock Bouncy castle - api criptográfica.
 
+\bibitem{bouncyCastleCurves}
+Legion of~the Bouncy Castle~Inc.
+\newblock Bouncy castle - supported curves (ecdsa and ecgost).
+
 \bibitem{yUML}
 Pocketworks.
 \newblock yuml diagrams.
@@ -86,9 +95,20 @@ Mohamad Ramli, Nurul Akmar, Muhammad~Saufi Kamarudin, and Ariffuddin Joret.
 \newblock Iris recognition for personal identification.
 \newblock 2008.
 
+\bibitem{rivest1978method}
+Ronald~L Rivest, Adi Shamir, and Len Adleman.
+\newblock A method for obtaining digital signatures and public-key
+  cryptosystems.
+\newblock {\em Communications of the ACM}, 21(2):120--126, 1978.
+
 \bibitem{sqlite}
 SQLite.
 \newblock Sqlite - public domain embedded sql database engine.
+
+\bibitem{coloresStone}
+Debbie Stone, Caroline Jarrett, Mark Woodroffe, and Shailey Minocha.
+\newblock {\em User interface design and evaluation}.
+\newblock Morgan Kaufmann, 2005.
 
 \bibitem{gantt}
 GanttProject Team.

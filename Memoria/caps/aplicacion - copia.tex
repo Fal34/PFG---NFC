@@ -503,12 +503,12 @@ Principalmente estos elementos son los que definen el diseño principal de la ap
 \centering
 	\begin{subfigure}{0.4\textwidth}
 		\centering
-		\includegraphics[width=0.85\textwidth]{./img/pantallaPrincipal}
+		\includegraphics[scale=0.45]{./img/pantallaPrincipal}
     \end{subfigure}          
     \qquad\qquad\qquad  % spacing between the subfigures
     \begin{subfigure}{0.4\textwidth}  
        \centering
-       \includegraphics[width=0.85\textwidth]{./img/menuDesplegado}
+       \includegraphics[scale=0.45]{./img/menuDesplegado}
     \end{subfigure}   
   \caption{Elementos de diseño: Muestra de la disposición espacial del menú y estructura básica de la aplicación}
   \label{img:designElements}
@@ -606,10 +606,10 @@ El contenido por defecto del sistema se adecua a la implementación de la curva 
 
 La aplicación final se compone principalmente de una actividad principal que dispone del menú lateral, la barra superior de acciones y un contenedor que va modificándose en función de la situación. En las siguientes secciones se muestra el contenido, utilización, significado y ejemplos de cada uno de estos apartados que compondrán los datos que se muestran en el contenedor.
 
-\subsection{Inicio y Menú}
-\label{App:AD:InicioyMenú}
+\subsection{Inicio}
+\label{App:AD:Inicio}
 
-La página de inicio será el contenido por defecto del contenedor. Se presenta el logo de la aplicación junto a unas referencias a la autoría. La figura \ref{img:app:inicio} muestra la visualización en cuestión. También se puede acceder a esta vista desde el menú lateral (\textit{véase sección \ref{App:Menu}}). Por otro lado, para acceder al menú de la aplicación se puede pulsar en el extremo superior-izquierdo de la pantalla o deslizar el dedo desde el lateral izquierdo hacia el derecho. Se listan las posibles opciones de la aplicación como se observa en la figura \ref{img:app:menuDesplegado}.
+La página de inicio será el contenido por defecto del contenedor. Se presenta el logo de la aplicación junto a unas referencias a la autoría. La figura \ref{img:app:inicio} muestra la visualización en cuestión. También se puede acceder a esta vista desde el menú lateral (\textit{véase sección \ref{App:Menu}}).
 
 \begin{figure}[H]
   \centering
@@ -618,29 +618,18 @@ La página de inicio será el contenido por defecto del contenedor. Se presenta 
   \label{img:app:inicio}
 \end{figure}
 
+\subsection{Menú}
+\label{App:Menu}
 
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/accesoMenu}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/menuDesplegado}}
-%  \caption{Acceso y vista del menú desplegado.}
-%  \label{img:app:menuDesplegado}
-%\end{figure}
+Para acceder al menú de la aplicación se puede pulsar en el extremo superior-izquierdo de la pantalla o deslizar el dedo desde el lateral izquierdo hacia el derecho. Se listan las posibles opciones de la aplicación como se observa en la figura \ref{img:app:menuDesplegado}.
 
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/accesoMenu}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/menuDesplegado}
-    \end{subfigure}   
-  \caption{Acceso y vista del menú desplegado.}
-  \label{img:menuDesplegado}
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/accesoMenu}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/menuDesplegado}}
+  \caption{Acceso y vista del menú desplegado}
+  \label{img:app:menuDesplegado}
 \end{figure}
 
 \subsection{Acerca de}
@@ -665,29 +654,15 @@ Accediendo a la parte administrativa de la aplicación desde el menú llamada de
 
 En la pestaña de sistema se muestra una advertencia de desplegar una nueva configuración de seguridad del criptosistema. A su vez, se puede escoger la definición de la curva a implementar antes de crear una nueva. Cuando se pulsa en la creación del nuevo sistema se muestra un mensaje de confirmación previo como se aprecia en la figura \ref{img:app:sistema}.
 
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueSistema}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despligueSistemaDialog}}
-%  \caption{Pantalla de despliegue del sistema.}
-%  \label{img:app:sistema}
-%\end{figure}
-
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/despliegueSistema}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/despligueSistemaDialog}
-    \end{subfigure}   
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueSistema}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despligueSistemaDialog}}
   \caption{Pantalla de despliegue del sistema.}
   \label{img:app:sistema}
 \end{figure}
+
 
 \subsubsection{Base de datos}
 \label{App:AD:D:Base de dtaos}
@@ -701,26 +676,11 @@ Otra funcionalidad de la aplicación es la de restaurar la base de datos con los
   \label{img:app:baseDatos1}
 \end{figure}  
 
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosDialog}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosMensaje}}
-%  \caption{Restauración de los datos por defecto.}
-%  \label{img:app:baseDatos2}
-%\end{figure}
-
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/despliegueBaseDeDatosDialog}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/despliegueBaseDeDatosMensaje}
-    \end{subfigure}   
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosDialog}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosMensaje}}
   \caption{Restauración de los datos por defecto.}
   \label{img:app:baseDatos2}
 \end{figure}
@@ -737,26 +697,11 @@ Mediante el menú se accede a la pantalla de creación de nuevo usuario. En esta
   \label{img:app:nuevoUsuario1}
 \end{figure}  
 
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioDialog}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioAgregado}}
-%  \caption{Aviso de creación de un nuevo usuario y escritura de la tarjeta NFC.}
-%  \label{img:app:nuevoUsuario2}
-%\end{figure}
-
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/nuevoUsuarioDialog}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/nuevoUsuarioAgregado}
-    \end{subfigure}   
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioDialog}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioAgregado}}
   \caption{Aviso de creación de un nuevo usuario y escritura de la tarjeta NFC.}
   \label{img:app:nuevoUsuario2}
 \end{figure}
@@ -766,26 +711,11 @@ Mediante el menú se accede a la pantalla de creación de nuevo usuario. En esta
 
 Desde el menú se puede acceder a la pestaña de ver usuarios. Donde se muestra la información de la base de datos relativa  los usuarios del sistema actual. La figura \ref{img:app:verUsuarios} muestra la vista con varios usuarios y con un solo usuario en el sistema. Si no hubiera usuarios mostraría un mensaje avisando de que no hay usuarios disponibles.
 
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/verUsuarios}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioInsertado}}
-%  \caption{Listado de varios usuarios y un usuario del sistema.}
-%  \label{img:app:verUsuarios}
-%\end{figure}
-
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/verUsuarios}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/nuevoUsuarioInsertado}
-    \end{subfigure}   
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/verUsuarios}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioInsertado}}
   \caption{Listado de varios usuarios y un usuario del sistema.}
   \label{img:app:verUsuarios}
 \end{figure}
@@ -803,51 +733,21 @@ Por último, el menú dispone la pestaña de verificación. En esta pestaña se 
 \end{figure}  
 
 Cuando el dispositivo detecta el contacto de una tarjeta NFC se lanzará automáticamente esta pantalla en la aplicación. Por lo que no es necesario encontrarse en esta pestaña cuando se acerque la tarjeta al dispositivo. Si el contenido es correcto se mostrará un mensaje de validación, sino mostrará un mensaje de error, ambos comportamientos se ven en la figura \ref{img:app:verificarNFC1}. Sin embargo, puede darse el caso de que no se escriba el nuevo contenido en la tarjeta tras verificarla. De esta forma, no se muestra el mensaje de escritura con éxito hasta que no se vuelva a acercar otra vez la tarjeta NFC, el comportamiento se observa en la figura \ref{img:app:verificarNFC2}.
-%
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionExitoEscrito}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionFallida}}
-%  \caption{Verificar NFC válida común y fallida.}
-%  \label{img:app:verificarNFC1}
-%\end{figure}
 
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/validacionExitoEscrito}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/validacionFallida}
-    \end{subfigure}   
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionExitoEscrito}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionFallida}}
   \caption{Verificar NFC válida común y fallida.}
   \label{img:app:verificarNFC1}
 \end{figure}
 
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/ValidacionExitoNoEscrito}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/escrituraPostLectura}}
-%  \caption{Verificar NFC válida, con escritura realizada y sin ella.}
-%  \label{img:app:verificarNFC2}
-%\end{figure}
-
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/ValidacionExitoNoEscrito}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/escrituraPostLectura}
-    \end{subfigure}   
+  \centering
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/ValidacionExitoNoEscrito}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/escrituraPostLectura}}
   \caption{Verificar NFC válida, con escritura realizada y sin ella.}
   \label{img:app:verificarNFC2}
 \end{figure}
@@ -861,26 +761,11 @@ En cada uno de los métodos de la clase principal se ha testeado que su ejecuci�
 \\\\
 La descripción básica de la clase y su documentación es la recogida por la interfaz que implementa (la descripción en detalle de la clase de puede encontrar en el apartado \ref{App:Seguridad y criptología}). El resultado de los test JUnit se pueden observar en la figura \ref{img:junitTest} con una consecución de cobertura del código de más del 96\% realizado con el complemento \textit{EclEmma}\cite{eclemma} para este propósito. En la misma figura se muestra la prueba de consecución de cobertura código la clase objetivo. 
 
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.45\textwidth]{./img/junitTest}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.5\textwidth]{./img/coveredCode}}
-%  \caption{Resultado del test JUnit y cobertura de código alcanzada durante el test JUnit.}
-%  \label{img:junitTest}
-%\end{figure}
-
 \begin{figure}[H]
-\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{./img/junitTest}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
-       \centering
-       \includegraphics[width=0.85\textwidth]{./img/coveredCode}
-    \end{subfigure}   
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{./img/junitTest}}
+  \null\hfill
+  \subfloat{\includegraphics[width=0.5\textwidth]{./img/coveredCode}}
   \caption{Resultado del test JUnit y cobertura de código alcanzada durante el test JUnit.}
   \label{img:junitTest}
 \end{figure}
