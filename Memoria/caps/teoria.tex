@@ -4,12 +4,24 @@
 \section{Seguridad}
 \label{Seguridad}
 
-<Seguridad>
+Existen ciertas consideraciones básicas a tener en cuenta respecto a la seguridad de la identificación y comunicaciones. Siempre ha sido un elemento primordial el poder identificar el emisor de un mensaje y el contenido no haya sido manipulado. 
+\\\\
+Existen claros ejemplos de que es un problema al cuál se le han puesto diversas soluciones a lo largo de los siglos en diferentes civilizaciones. Las comunicaciones han sido desde hace milenios un elemento esencial para diferentes objetivos, pese a que, en la mayoría de los casos, la aplicación inicial ha sido bélica. Ganar ventaja sobre un enemigo en cualquier ámbito podría significar la diferencia entre la victoria o la consecución del objetivo o no. La seguridad en las comunicaciones no se encuentra exenta de ello. 
+\\\\
+El ejemplo más evidente y referenciado en numerosos filmes es el del envío de un mensaje sellado con la marca identificadora del emisor. Esta práctica es conocida hace más de 3.000 años para firmar documentos oficiales por parte de mandatarios. Se habla más en profundidad en el libro de Randall Price \textit{The stones cry out}\cite{stonesCryOut} sobre las investigaciones y descubrimientos, entre ellos el del arqueólogo Avraham Biran, que corroboran la afirmación de la utilización de sellos identificativos por parte del reinado del rey David en Israel (dicha identificación hace prueba de su existencia, referente en la Biblia). Básicamente se realizó el mismo procedimiento durante cientos de años: escribir una misiva con contenido sensible, sellar la misiva con una cuña identificativa y entregar el mensaje al destinatario. El sello se presuponía único ya que dicha cuña solo se encontraba en posesión de un emisor válido. Al sellarse, se aseguraba la integridad de que el contenido no fuera comprometido si no se rompía el sello. El receptor obtenía la carta con el sello y el mensaje original en su interior.
+\\\\
+Este sistema no era perfecto, pero conseguía grandes resultados en su época ya que la copia de un sello no era tan sencilla como se podría imaginar. Sin embargo, los inconvenientes de su utilización resultan obvios: mensajes entregados erróneamente o capturados durante su trayecto, desconocimiento de la validez del sello, aperturas de la carta por otros medios, tiempo de entrega, validez temporal del mensaje y etcétera.
+\\\\
+Con el paso del tiempo cambiaron los canales de comunicación. Los sistemas de comunicaciones dieron pasos de gigante con inventos tales como la telegrafía óptica (emitir mensajes en la distancia mediante la disposición de elementos visibles en diferentes posiciones), la invención del teléfono por parte de Antonio Meucci o el telégrafo por parte de S. Morse. Con ello aumentaron la capacidad, rapidez y la eficacia de las comunicaciones, pese a que por otro lado se producían nuevos problemas de identificación.
+\\\\
+Actualmente, hasta las comunicaciones más simples cuentan con sistemas que aseguran que la identidad de las partes implicadas sean veraces y el contenido seguro. No por ello dejan de existir partes malintencionadas que buscan obtener información o adulterarla en base a sus pretensiones; para evitarlo nace la criptografía. La criptografía había sido estudiada (criptología) desde hace siglos, donde va cobrando vital importancia desde sus inicios debido a las aplicaciones para realizar comunicaciones seguras.
 
-\section{Criptología}
-\label{Criptología}
+\section{Criptografía}
+\label{Criptografía}
 
-<Criptología>
+La criptografía (del griego \textit{cripto} (oculto) y \textit{logo} (grafo) o escritura oculta) actualmente 'se encarga del estudio de los algoritmos, protocolos y sistemas que se utilizan para dotar de seguridad a las comunicaciones, a la información y a las entidades que se comunican'\cite{pastor1998criptografia}.
+\\\\
+La implementación de criptosistemas (sistemas criptográficos) ha sido utilizada desde las más básicas trasposiciones de caracteres de la época romana hasta los más avanzados de la actualidad con la utilización de propiedades matemáticas avanzadas.
 
 \subsection{Protocolos simétricos y asimétricos}
 \label{Protocolos simétricos y asimétricos}
@@ -20,7 +32,8 @@
 \label{Problema del logaritmo discreto}
 
 <Problema del logaritmo discreto>
-Citar a Galbraith y sobres los ataques a las curvas.
+
+Más en profundidad, los autores Steven D. Galbraith y Pierrick Gaudry elaboraron el documento \cite{galbraith2016recent} en el cuál estudian los problemas computacionales relacionados con el problema del logaritmo discreto y su relación con las curvas elípticas. A su vez, también comentan ataques de criptoanálisis para diferentes definiciones de curvas elípticas (paso de gigante paso de niño o el algoritmo \textit{lambda} de Pollard entre otros).
 
 \subsection{Criptología con curvas elípticas - ECC}
 \label{Criptología con curvas elípticas - ECC}

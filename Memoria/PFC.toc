@@ -1,32 +1,29 @@
 \select@language {spanish}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{8}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objetivo}{8}{section.1.2}
+\contentsline {section}{\numberline {1.1}Objetivo}{8}{section.1.1}
 \contentsline {chapter}{\numberline {2}Elementos te\IeC {\'o}ricos}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Seguridad}{9}{section.2.1}
-\contentsline {section}{\numberline {2.2}Criptolog\IeC {\'\i }a}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Protocolos sim\IeC {\'e}tricos y asim\IeC {\'e}tricos}{9}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Problema del logaritmo discreto}{9}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Criptolog\IeC {\'\i }a con curvas el\IeC {\'\i }pticas - ECC}{9}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Tecnolog\IeC {\'\i }a NFC}{9}{section.2.3}
-\contentsline {chapter}{\numberline {3}APP: Autenticaci\IeC {\'o}n en un sistema ficticio}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Materiales y tecnolog\IeC {\'\i }as utilizadas}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{16}{section.3.3}
-\contentsline {section}{\numberline {3.4}Escenario}{17}{section.3.4}
-\contentsline {section}{\numberline {3.5}Requisitos y funcionalidades}{19}{section.3.5}
-\contentsline {section}{\numberline {3.6}Dise\IeC {\~n}o y aspecto}{27}{section.3.6}
-\contentsline {section}{\numberline {3.7}Seguridad y criptolog\IeC {\'\i }a}{29}{section.3.7}
-\contentsline {section}{\numberline {3.8}Base de datos}{33}{section.3.8}
-\contentsline {section}{\numberline {3.9}Aplicaci\IeC {\'o}n desarrollada}{34}{section.3.9}
-\contentsline {subsection}{\numberline {3.9.1}Inicio y Men\IeC {\'u}}{34}{subsection.3.9.1}
-\contentsline {subsection}{\numberline {3.9.2}Acerca de}{35}{subsection.3.9.2}
-\contentsline {subsection}{\numberline {3.9.3}Despliegue}{36}{subsection.3.9.3}
-\contentsline {subsubsection}{Sistema}{36}{section*.21}
-\contentsline {subsubsection}{Base de datos}{37}{section*.23}
-\contentsline {subsection}{\numberline {3.9.4}Nuevo usuario}{38}{subsection.3.9.4}
-\contentsline {subsection}{\numberline {3.9.5}Ver usuarios}{39}{subsection.3.9.5}
-\contentsline {subsection}{\numberline {3.9.6}Verificaci\IeC {\'o}n}{40}{subsection.3.9.6}
-\contentsline {section}{\numberline {3.10}Pruebas}{43}{section.3.10}
-\contentsline {chapter}{\numberline {4}Conclusiones}{45}{chapter.4}
-\contentsline {section}{\numberline {4.1}Futuras mejoras}{45}{section.4.1}
+\contentsline {section}{\numberline {2.2}Criptograf\IeC {\'\i }a}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Protocolos sim\IeC {\'e}tricos y asim\IeC {\'e}tricos}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Problema del logaritmo discreto}{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Criptolog\IeC {\'\i }a con curvas el\IeC {\'\i }pticas - ECC}{10}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Tecnolog\IeC {\'\i }a NFC}{11}{section.2.3}
+\contentsline {chapter}{\numberline {3}APP: Autenticaci\IeC {\'o}n en un sistema ficticio}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Materiales y tecnolog\IeC {\'\i }as utilizadas}{14}{section.3.2}
+\contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{18}{section.3.3}
+\contentsline {section}{\numberline {3.4}Escenario}{19}{section.3.4}
+\contentsline {section}{\numberline {3.5}Requisitos y funcionalidades}{21}{section.3.5}
+\contentsline {section}{\numberline {3.6}Dise\IeC {\~n}o y aspecto}{29}{section.3.6}
+\contentsline {section}{\numberline {3.7}Seguridad y criptolog\IeC {\'\i }a}{31}{section.3.7}
+\contentsline {section}{\numberline {3.8}Base de datos}{35}{section.3.8}
+\contentsline {section}{\numberline {3.9}Aplicaci\IeC {\'o}n desarrollada}{36}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Inicio y Men\IeC {\'u}}{36}{subsection.3.9.1}
+\contentsline {subsection}{\numberline {3.9.2}Acerca de}{37}{subsection.3.9.2}
+\contentsline {subsection}{\numberline {3.9.3}Despliegue}{38}{subsection.3.9.3}
+\contentsline {subsection}{\numberline {3.9.4}Nuevo usuario}{40}{subsection.3.9.4}
+\contentsline {subsection}{\numberline {3.9.5}Ver usuarios}{41}{subsection.3.9.5}
+\contentsline {subsection}{\numberline {3.9.6}Verificaci\IeC {\'o}n}{42}{subsection.3.9.6}
+\contentsline {section}{\numberline {3.10}Pruebas}{45}{section.3.10}
+\contentsline {chapter}{\numberline {4}Conclusiones}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Futuras mejoras}{47}{section.4.1}

@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{boneh2001identity}
+Dan Boneh and Matt Franklin.
+\newblock Identity-based encryption from the weil pairing.
+\newblock In {\em Advances in Cryptology—CRYPTO 2001}, pages 213--229.
+  Springer, 2001.
+
 \bibitem{javaReflection}
 Oracle Corporation.
 \newblock Java reflection.
@@ -21,6 +27,11 @@ Whitfield Diffie and Martin~E Hellman.
 \newblock New directions in cryptography.
 \newblock {\em Information Theory, IEEE Transactions on}, 22(6):644--654, 1976.
 
+\bibitem{dupont2006provably}
+R{\'e}gis Dupont and Andreas Enge.
+\newblock Provably secure non-interactive key distribution based on pairings.
+\newblock {\em Discrete Applied Mathematics}, 154(2):270--276, 2006.
+
 \bibitem{eclemma}
 EclEmma.
 \newblock Java code coverage for eclipse.
@@ -32,6 +43,11 @@ NFC Forum.
 \bibitem{eclipse}
 Eclipse Fundation.
 \newblock Eclipse.
+
+\bibitem{galbraith2016recent}
+Steven~D Galbraith and Pierrick Gaudry.
+\newblock Recent progress on the elliptic curve discrete logarithm problem.
+\newblock {\em Designs, Codes and Cryptography}, 78(1):51--72, 2016.
 
 \bibitem{diagramaDBOnline}
 GenMyModel.
@@ -61,6 +77,10 @@ Google Inc.
 Google Inc.
 \newblock Material design icons.
 
+\bibitem{sagemath}
+SageMath Inc.
+\newblock Sagemath - collaborative computational mathematics.
+
 \bibitem{iso14443}
 ISO/IEC.
 \newblock Iso/iec standard 14443-3.
@@ -86,9 +106,19 @@ Legion of~the Bouncy Castle~Inc.
 Legion of~the Bouncy Castle~Inc.
 \newblock Bouncy castle - supported curves (ecdsa and ecgost).
 
+\bibitem{pastor1998criptografia}
+Jos{\'e} Pastor and Miguel {\'A}ngel~Sarasa L{\'o}pez.
+\newblock {\em Criptograf{\'\i}a digital: fundamentos y aplicaciones}.
+\newblock Publicaciones Universitarias Universidad de Zaragoza, 1998.
+
 \bibitem{yUML}
 Pocketworks.
 \newblock yuml diagrams.
+
+\bibitem{stonesCryOut}
+Randall Price.
+\newblock {\em The Stones Cry Out}.
+\newblock Harvest House, 1997.
 
 \bibitem{ramli2008iris}
 Mohamad Ramli, Nurul Akmar, Muhammad~Saufi Kamarudin, and Ariffuddin Joret.
@@ -100,6 +130,12 @@ Ronald~L Rivest, Adi Shamir, and Len Adleman.
 \newblock A method for obtaining digital signatures and public-key
   cryptosystems.
 \newblock {\em Communications of the ACM}, 21(2):120--126, 1978.
+
+\bibitem{bruce}
+Bruce Schneier.
+\newblock Applied cryptography, second edition: Protocols, algorthms, and
+  source code in c (cloth).
+\newblock 1996.
 
 \bibitem{sqlite}
 SQLite.
