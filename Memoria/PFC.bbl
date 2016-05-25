@@ -137,6 +137,12 @@ Bruce Schneier.
   source code in c (cloth).
 \newblock 1996.
 
+\bibitem{shannon2001mathematical}
+Claude~Elwood Shannon.
+\newblock A mathematical theory of communication.
+\newblock {\em ACM SIGMOBILE Mobile Computing and Communications Review},
+  5(1):3--55, 2001.
+
 \bibitem{sqlite}
 SQLite.
 \newblock Sqlite - public domain embedded sql database engine.
