@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{keylength}
+BlueKrypt.
+\newblock Cryptographic key length recommendation with arjen k. lenstra
+  teorems.
+
 \bibitem{boneh2001identity}
 Dan Boneh and Matt Franklin.
 \newblock Identity-based encryption from the weil pairing.
@@ -88,6 +93,11 @@ ISO/IEC.
 \bibitem{junit}
 JUnit.
 \newblock Junit.
+
+\bibitem{lenstra}
+Arjen~K Lenstra and Eric~R Verheul.
+\newblock Selecting cryptographic key sizes.
+\newblock {\em Journal of cryptology}, 14(4):255--293, 2001.
 
 \bibitem{lucena}
 Manuel~Jos{\'e} Lucena.
