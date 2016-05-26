@@ -64,6 +64,7 @@
     }
 
 \usepackage[toc,page]{appendix}    % Apendices
+\setlength\parindent{0pt}
 
 % Bibliografia
 \usepackage{cite}
@@ -119,50 +120,52 @@
 \title{\titulo}
 \author{\autor}
 
+\usepackage{pdfpages} % Para la unión de otros pdfs
 \begin{document}
 
-%###### - Portada - ######
-\begin{titlepage}
-
-\begin{center}
-\vspace*{-1in}
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=4cm]{./img/unicanLogo}
-\end{center}
-\end{figure}
-
-\begin{LARGE}
-\textbf{
-Facultad \\
-De\\
-Ciencias\\}
-\end{LARGE}
-\vspace*{1in}
-\begin{huge}
-\textbf{\titulo} \\
-\tituloIngles \\
-\end{huge}
-\vspace*{0.6in}
-\begin{large}
-Trabajo de Fin de Grado\\
-para acceder al\\
-\vspace*{0.15in}
-\textbf{\carrera}\\
-\end{large}
-\vspace*{1.2in}
-
-\begin{large}
-\begin{flushright}
-Autor : \autor\\
-Director : \director\\
-\fecha
-\end{flushright}
-\end{large}
-
-\end{center}
-
-\end{titlepage}
+%%###### - Portada - ######
+%\begin{titlepage}
+%
+%\begin{center}
+%\vspace*{-1in}
+%\begin{figure}[htb]
+%\begin{center}
+%\includegraphics[width=4cm]{./img/unicanLogo}
+%\end{center}
+%\end{figure}
+%
+%\begin{LARGE}
+%\textbf{
+%Facultad \\
+%De\\
+%Ciencias\\}
+%\end{LARGE}
+%\vspace*{1in}
+%\begin{huge}
+%\textbf{\titulo} \\
+%\tituloIngles \\
+%\end{huge}
+%\vspace*{0.6in}
+%\begin{large}
+%Trabajo de Fin de Grado\\
+%para acceder al\\
+%\vspace*{0.15in}
+%\textbf{\carrera}\\
+%\end{large}
+%\vspace*{1.2in}
+%
+%\begin{large}
+%\begin{flushright}
+%Autor : \autor\\
+%Director : \director\\
+%\fecha
+%\end{flushright}
+%\end{large}
+%
+%\end{center}
+%
+%\end{titlepage}
+\includepdf[pages={1}]{portada.pdf}
 %###### - Fin Portada - ######
 \begingroup
 \let\cleardoublepage\clearpage
@@ -215,7 +218,6 @@ Director : \director\\
 \subfile{caps/conclusiones}
 
 %% ### - Anexo I - ###
-\afterpage{\blankpage}	% Página en blanco
 \chapter*{Anexo I: Comunicación de claves}
 \label{AnexoI}
 \subfile{caps/anexo1}

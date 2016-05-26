@@ -1,20 +1,28 @@
 \documentclass[../PFC.tex]{subfiles}
 \begin{document}
 
+\vspace{0.5515cm}
+
 \section{Introducción}
 \label{App:Introducción}
 
 Anteriormente se han explicado los conocimientos y términos generales relacionados con la seguridad en la autenticidad NFC basada en criptología con curvas elípticas. A continuación se muestra la aplicación de dichos conocimientos en un proyecto software experimental. El objetivo es demostrar la capacidad de los dispositivos NFC para, de la mano de la criptografía con curvas elípticas, llegar a desarrollar un sistema de autenticación eficiente y fiable.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Tanto los nombres, librerías, herramientas, así como el resto del material utilizado se describirán a continuación. A su vez, siguiendo un estándar de desarrollo software basado en metodologías ágiles, se mostrará la utilizada para éste proyecto. Para ello,  el autor y director de este TFG (Fidel Abascal y Domingo Gómez) hemos actuado y ejercido tanto de cliente como de contratado para el desarrollo de la aplicación. 
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Dentro de un ámbito ficticio, se plantea una empresa llamada \textbf{Alpha - Consultora S.A.}\footnote{Cualquier similitud con la realidad es mera coincidencia}, nueva potencia local dentro del campo de la seguridad bancaria, que ha cosechado unos excelentes resultados a lo largo de sus 2 años de existencia. Cuenta con más de 40 trabajadores y su crecimiento y expansión es notoria. Tanto es el éxito de esta compañía que, para dar cabida a su plantilla, ha decidido trasladarse a una nueva sede más moderna, amplia y mejor ubicada. La empresa, antes de instalarse en la nueva sede, decide contratar a unos expertos en seguridad para gestionar el control de accesos mediante un sistema de tarjetas y lectores en las entradas; teniendo en cuenta una inversión mínima pero garantizando un alto grado de seguridad.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Tras buscar incesantemente recurren a la empresa \textbf{F-NFC}. Una vez realizado el estudio por parte de F-NFC, se pone en consonancia un acuerdo para elaborar una aplicación que genere información que autentifique a un usuario de la empresa \textit{Alpha} y sea reconocido de forma unívoca para permitir su acceso a la sede. La infraestructura de la empresa propietaria de la nueva sede corresponde a la figura \ref{img:infraestructura}.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=1\textwidth]{./img/arquitecturaVirtual}
+  \includegraphics[width=0.9\textwidth]{./img/arquitecturaVirtual}
   \caption{Infraestructura del sistema ficticio.}
   \label{img:infraestructura}
 \end{figure}
@@ -25,10 +33,15 @@ Los detalles de implementación de la aplicación seguirán un objetivo didácti
 \label{App:Materiales y tecnologías utilizadas}
 
 Para el desarrollo del proyecto se ha utilizado, ante todo, software de carácter libre junto a imágenes, textos, estructuras y contenido sin restricciones de uso. Ya sea debido al tipo de licencia de cada elemento o por ser de autoría propia.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 El desarrollo se ha realizado en el lenguaje de programación \textit{Java} con el kit de desarrollo \textit{Java} (JDK) 1.8.65 (\textit{Java 8 update 65}) de \textit{Oracle Corporation}\cite{java}.
-\\\\
-El entorno de desarrollo integrado o \textit{IDE} de la aplicación es el oficial de Google para el desarrollo para dispositivos \textit{Android}: \textit{Android Studio}, versión 1.5.1\cite{androidStudio}. Este programa provee las herramientas básicas de desarrollo; entre ellas, un administrador de los kit de desarrollo o \textit{SDKs} para las diferentes versiones y varios elementos descritos a continuación: 
+\*
+\vspace{0.5515cm}
+\\
+El entorno de desarrollo integrado o \textit{IDE} de la aplicación es el oficial de Google para el desarrollo para dispositivos \textit{Android}: \textit{Android Studio}, versión 1.5.1\cite{androidStudio}. Este programa provee las herramientas básicas de desarrollo; entre ellas, un administrador de los kit de desarrollo o \textit{SDKs} para las diferentes versiones y varios elementos descritos a continuación:
+
 \begin{itemize}
 \item{Plataformas SDK}
 	\begin{itemize}
@@ -38,23 +51,32 @@ El entorno de desarrollo integrado o \textit{IDE} de la aplicación es el oficia
 	\begin{itemize}
 	\item{Android Build Tools : Para la construcción de la aplicación.}
 	\item{Android SDK Platform Tools v23.1: Soporte para el desarrollo.}
-	\item{Repositorio de ayuda Android, rev 30.}
-	\item{Libreria de ayuda Android, rev 23.2.1 : Ayudas en la retrocompatibilidad 	de elementos de interfaz de usuario.}
+	\item{Libreria de ayuda Android, rev 23.2.1; y repositorio rev 30: Ayudas en la retrocompatibilidad 	de elementos de interfaz de usuario.}
 	\item{Google USB Driver, rev 11 : Conexión entre el servicio de ejecución de la aplicación y los dispositivos USB.}
 	\item{Intel x86 HAXM, rev 6.0.1 : Aceleración \textit{hardware} para la emulación.}
 	\end{itemize}
 \end{itemize}
 
-Estos componentes de \textit{Android Studio} hacen posible el desarrollo de la aplicación objetivo. Este programa, con carencias notorias en ciertos apartados, ha hecho complicado, de cierta forma, la selección de componentes a instalar, versiones , etcétera debido a diversos motivos de compatibilidades de librerías y actualizaciones desfasadas entre los componentes y el propio IDE. 
-\\\\
+Estos componentes de \textit{Android Studio} hacen posible el desarrollo de la aplicación objetivo. Este programa, con carencias notorias en ciertos apartados, ha hecho complicado, de cierta forma, la selección de componentes a instalar, versiones, etcétera debido a diversos motivos de compatibilidades de librerías y actualizaciones desfasadas entre los componentes y el propio IDE. 
+\*
+\vspace{0.5515cm}
+\\
 La esencia de la aplicación reside en la criptografía mediante curvas elípticas. Para la implementación de ello ha sido necesario utilizar una librería externa llamada \textit{Bouncy Castle}\cite{bouncyCastle} versión 1.54. Dicha librería suple las deficiencias de la implementación base de la propia API (\textit{Application Programming Interface}) de \textit{Java} en su paquete de \textit{java.security}\cite{javaSecurity}. La cual tiene limitaciones claras a la hora de la generar curvas elípticas. Gracias a ésta librería se ha podido realizar la parte crítica de la aplicación con una mejora de rendimiento notoria si se tuviera que haber utilizado únicamente la API de \textit{Java}. 
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Respecto al almacenaje de datos se ha optado por utilizar una pequeña base de datos en \textit{SQLite}\cite{sqlite} descrita más adelante.Ésta base de datos se utiliza para el almacenamiento de unos pequeños registros que utiliza la aplicación. El uso de una base de datos de mayor capacidad y funcionalidades no se ha contemplado factible. 
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 En cuanto a los elementos gráficos de la aplicación, un alto porcentaje son de elaboración propia mediante programas de edición de imágenes. El resto son de libre uso comercial. La iconografía de la aplicación es autoría de \textit{Google Inc.}\cite{googleIcons}. Dichos iconos han de ser vectoriales debido a la optimización del tratamiento de imágenes y su renderizado, por lo que en este aspecto, \textit{Google} provee estos  iconos en formato \textit{SVG} (\textit{Scalable Vector Graphics}) y \textit{PNG}; también \textit{Android Studio} contiene iconografía de forma nativa pero no actualizada. A la hora de incluir estos elementos externos se ha transformado las descripciones vectoriales \textit{SVG} en formato \textit{XML} (\textit{eXtensible Markup Language}) interpretable de forma sencilla por \textit{Android Studio} y fácilmente modificables en los casos que se ha requerido. En el apartado \ref{App:Diseño y aspecto} de diseño y aspecto de la aplicación se comenta en detalle el resto de la disposición, motivación y elaboración gráfica de la aplicación. 
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 La API objetivo del proyecto \textit{Android} ha sido la número 22. Desarrollada para la versión 5.1. (\textit{LOLLIPOP MR1}). Se ha decidido utilizar esta API debido a las mejoras sustanciales en cuanto al trabajo del adaptador NFC implementadas desde la versión 5.0\cite{androidAPI21} y mejoradas en ésta\cite{androidAPI22}. 
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Para el testado de la aplicación \textit{Android Studio} se dispone de la tecnología \textit{AVD} para la virtualización de dispositivos \textit{Android}. Sin embargo, el rendimiento es pobre en comparación con el testeo y \textit{debug} en un dispositivo físico. Por lo que se ha utilizado un dispositivo \textit{Android} \textit{smartphone} \textit{One Plus One} de la compañía americana \textit{Never Settle}, el cuál dispone de la versión \textit{Android} 5.1.1 y \textit{Cyanogen OS} 12.1.1  en el momento de la elaboración de la aplicación. 
 
 \begin{figure}[H]
@@ -69,8 +91,7 @@ Por último, el proyecto ha necesitado de dos elementos físicos principales: el
 \begin{itemize}
 \item{Tipo de etiqueta : ISO 14443-3A.}
 \item{Descripción : NXP MIFARE Ultralight (Ultralight C) - NTAG213.}
-\item{Tecnología : NfcA, Ndef, MifareUltralight.}
-\item{Formato de datos: NFC Forum Type 2.}
+\item{Tecnología : NfcA, Ndef, MifareUltralight y formato NFC Forum Type 2.}
 \item{Diámetro: 25 mm.}
 \item{Identificadores del chip.}
 	\begin{itemize}
@@ -96,21 +117,24 @@ Estas etiquetas se pueden adherir en una superficie que le haga de soporte. Por 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{./img/nfctag}
+  \includegraphics[width=0.4\textwidth]{./img/nfctag}
   \caption{NFC Tag - NTAG213}
   \label{img:nfctag}
 \end{figure}
 
-Hubiera sido preferible utilizar chips \textit{MIFARE}\cite{mifare} que tienen mayor capacidad y con mayores funcionalidades como los chips \textit{MIFARE classic} 1K y 4K del productor \textit{NXP}. Estos chips están implementados en una enorme cantidad de aplicaciones en todo el mundo, un ejemplo claro de su uso son en las tarjetas de transporte o hasta en las tarjetas de crédito y la mayoría de chips NFC actuales que impliquen la necesidad de encriptación (RSA comúnmente) y seguridad. En estas tarjetas es realmente complicado acceder a su contenido ya que se precisan ciertas claves para la lectura y decodificación. Sin embargo, en las utilizadas en este proyecto se escribe en texto plano (siguiendo el objetivo didáctico); en el apartado de seguridad y criptología \ref{App:Seguridad y criptología} se explica cómo afectaría esta carencia al sistema final. 
-\\\\
+Hubiera sido preferible utilizar chips \textit{MIFARE}\cite{mifare} que tienen mayor capacidad y con mayores funcionalidades como los chips \textit{MIFARE classic} 1K y 4K del productor \textit{NXP}. Estos chips están implementados en una enorme cantidad de aplicaciones en todo el mundo, un ejemplo claro de su uso son en las tarjetas de transporte o las tarjetas de crédito y la mayoría de chips NFC actuales que impliquen la necesidad de autenticación con encriptación (RSA comúnmente) y seguridad. En estas tarjetas es realmente complicado acceder a su contenido ya que se precisan ciertas claves para la lectura y decodificación. Sin embargo, en las utilizadas en este proyecto, se escribe en texto plano (siguiendo el objetivo didáctico); en el apartado de seguridad y criptología \ref{App:Seguridad y criptología} se explica cómo afectaría esta carencia al sistema final. 
+\*
+\vspace{0.5515cm}
+\\
 Todos los elementos descritos en este apartado conforman lo necesario para simular la estructura descrita en la figura \ref{img:infraestructura} y la implementada definida en el apartado \ref{App:Escenario}. 
-\\\\
 
 \section{Metodología}
 \label{App:Metodología}
 
 Se ha decidido implementar una metodología de desarrollo software basada en iteracciones de funcionalidades de forma incremental. Para una planificación estructurada se han programado los hitos y la consecución de tareas a completar en cada hito de validación.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Gracias a la herramienta Gantt\cite{gantt} para la elaboración de diagramas de planificación de proyectos, se han propuesto gráficamente la duración de cada tarea valorando su dificultad y las posibles modificaciones que hubieran podido surgir de las mismas en cada hito de validación. La duración de cada tarea implica los días necesarios para su finalización; sin tener relación con las horas laborales ya que, aunque no venga reflejado, se ha realizado trabajo en días no laborables. En las figuras \ref{img:gantt-base}, \ref{img:gantt1} y \ref{img:gantt2} se observa la organización inicial planteada. Cada apartado principal de la aplicación precedida de un hito se considera una iteracción incremental del proyecto para adecuarse a la metodología planteada.
 
 \begin{figure}[H]
@@ -140,11 +164,17 @@ Como se puede observar, la duración final del proyecto ha sido de 10 semanas ap
 \label{App:Escenario}
 
 La idea principal del escenario de la aplicación se ha comentado en el apartado \ref{App:Introducción}, en donde se comenta que el objetivo de la aplicación es meramente didáctico y experimental. Alejándose de los modelos pragmáticos del desarrollo profesional. 
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 La complejidad añadida de implementar un sistema cercano a la realidad aplicaría un coste elevado de recursos sin tener relevancia notoria en la finalidad comentada; elementos tales como: servidores, \textit{WebServices}, \textit{frameworks} de desarrollo, certificación, optimización, etcétera. Dado que la esencia de este TFG se centra en el elemento teórico y didáctico de la criptología en curvas elípticas, la creación de una aplicación de carácter altamente profesional le añadiría beneficios nimios, los cuales no compensan la complejidad agregada. Por tanto, se han realizado labores de simulación y ciertas partes que se han considerado prescindibles han sido descartadas.
-\\\\
-La arquitectura de la aplicación representada en la figura \ref{img:infraestructura} muestra un escenario típico que da pie a la implementación de este tipo de seguridad. Dentro de este proyecto virtual se dispone de un edificio el cuál posee tornos o puertas de acceso. Estas puertas son capaces de leer el contenido de las tarjetas NFC de cada usuario del sistema. El contenido de las tarjetas se transmite a los servidores de validación de la empresa (sin la necesidad de que se encuentren físicamente dentro del mismo edificio). Los servidores validarán la información recogida en el torno de acceso y validará o no el contenido. Si resulta validado el torno recogerá de los servidores la nueva información a escribir en la tarjeta para hacer válida el paso la próxima vez. Finalmente, el usuario por medio de ésta tarjeta unipersonal podrá acceder al edificio autenticándose en la entrada.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
+La arquitectura de la aplicación representada en la figura \ref{img:infraestructura} muestra un escenario típico que da pie a la implementación de este tipo de seguridad. Dentro de este proyecto virtual se dispone de un edificio el cuál posee tornos o puertas de acceso. Estas puertas son capaces de leer el contenido de las tarjetas NFC de cada usuario del sistema. El contenido de las tarjetas se transmite a los servidores de validación de la empresa (sin la necesidad de que se encuentren físicamente dentro del mismo edificio). Los servidores validarán la información recogida en el torno de acceso y aceptará o no el contenido. Si resulta validado el contenido, el torno recogerá de los servidores la nueva información a escribir en la tarjeta para hacer válida el paso la próxima vez. Finalmente, el usuario por medio de ésta tarjeta unipersonal podrá acceder al edificio autenticándose en la entrada.
+\*
+\vspace{0.5515cm}
+\\
 Descrito el escenario virtual, es necesario comentar el escenario real del proyecto se ha realizado. Contando con los elementos del apartado \ref{App:Materiales y tecnologías utilizadas} se agrupan las funcionalidades del escenario virtual en el dispositivo \textit{Android}. Por lo tanto, no hay conexiones a elementos externos y toda la estructura se compone únicamente del dispositivo \textit{Android} y las tarjetas NFC. A su vez, cuenta con las siguientes funciones que simulan las labores del escenario virtual:
 
 \begin{itemize}
@@ -155,16 +185,22 @@ Descrito el escenario virtual, es necesario comentar el escenario real del proye
 \end{itemize}
 
 Gracias a esta implementación del escenario virtual se han conseguido ventajas importantes, tales como: ser eficiente por no depender de elementos externos, utilizable para dispositivos móviles, portable al estar realizado en \textit{Java} y fácilmente modificable.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Todos los elementos de información se describen en el apartado \ref{App:Base de datos} sobre la base de datos de la aplicación; y las funcionalidades del sistema dentro del apartado \ref{App:Requisitos y funcionalidades} de requisitos y funcionalidades.
 
 \section{Requisitos y funcionalidades}
 \label{App:Requisitos y funcionalidades}
 
 La toma de requisitos, especificaciones y funcionalidades de la aplicación real, que cumple con los simulados en el contexto virtual descrito en la introducción \ref{App:Introducción}, se ha llevado a cabo mediante constantes reuniones entre las partes implicadas (dentro del escenario real, véase el apartado \ref{App:Escenario}). 
-\\\\
-Siguiendo la metodología ágil basada en iteracciones comentada en el apartado \ref{App:Metodología}, desde el primer momento se ha ido mostrando el avance del proyecto al supuesto cliente. Éste ha aceptado según sus requerimientos iniciales o ha concretado cambios que se adecuen en el marco de las funcionalidades principales.  Iteracción a iteracción se han ido realizando los pasos siguiendo hitos a validar. El diagrama \textit{Gantt} mostrado en la figura \ref{img:gantt-base} muestra en detalle la división de las tareas y apartados del proyecto realizado en este TFG.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
+Siguiendo la metodología ágil basada en iteracciones comentada en el apartado \ref{App:Metodología}, desde el primer momento se ha ido mostrando el avance del proyecto al cliente (en ambos escenarios: virtual y real). Éste ha aceptado según sus requerimientos iniciales o ha concretado cambios que se adecuen en el marco de las funcionalidades principales.  Iteracción a iteracción se han ido realizando los pasos siguiendo hitos a validar. El diagrama \textit{Gantt} mostrado en la figura \ref{img:gantt-base} muestra en detalle la división de las tareas y apartados del proyecto realizado en este TFG.
+\*
+\vspace{0.5515cm}
+\\
 Cada una de las tareas a realizar han seguido el objetivo de los casos de uso referidos a las funcionalidades de la aplicación. Los casos de uso de la aplicación se muestran en la figura \ref{img:usecase1}, realizada mediante la herramienta \textit{online} gratuita para la creación de diagramas UML de este tipo: \textit{yUML}\cite{yUML}.
 
 \begin{figure}[H]
@@ -486,7 +522,9 @@ Las definiciones en profundidad de estos casos de uso se muestran a continuació
 \label{App:Diseño y aspecto}
 
 La aplicación cuenta con un contenedor principal que ocupa la visión principal del dispositivo. En la parte superior dispone de barra principal de la aplicación que contiene el título de cada apartado y un acceso al menú. El menú se muestra desde la parte izquierda ocupando gran parte de la pantalla. Muestra una cabecera de menú y el listado de apartados de la aplicación.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Principalmente estos elementos son los que definen el diseño principal de la aplicación. La disposición sigue las normas básicas para el diseño de una aplicación \textit{Android} utilizando \textit{material desing} de \textit{Google}\cite{materialDesign}. Tanto la sombra de la barra principal, la sombra de fondo al mostrar el menú, el menú que se superpone a la barra principal y por debajo de los indicadores del dispositivo, la organización de los elementos del menú, el espaciado entre los elementos, la iconografía y demás elementos siguen en su mayoría las indicaciones de \textit{material desing}. En la figura \ref{img:designElements} se puede apreciar gran parte de estos elementos de diseño.
 
 %\begin{figure}[H]
@@ -503,12 +541,12 @@ Principalmente estos elementos son los que definen el diseño principal de la ap
 \centering
 	\begin{subfigure}{0.4\textwidth}
 		\centering
-		\includegraphics[width=0.85\textwidth]{./img/pantallaPrincipal}
+		\includegraphics[width=0.72\textwidth]{./img/pantallaPrincipal}
     \end{subfigure}          
     \qquad\qquad\qquad  % spacing between the subfigures
     \begin{subfigure}{0.4\textwidth}  
        \centering
-       \includegraphics[width=0.85\textwidth]{./img/menuDesplegado}
+       \includegraphics[width=0.72\textwidth]{./img/menuDesplegado}
     \end{subfigure}   
   \caption{Elementos de diseño: Muestra de la disposición espacial del menú y estructura básica de la aplicación}
   \label{img:designElements}
@@ -524,32 +562,42 @@ Es oportuno mencionar la paleta de colores utilizada, tanto para el fondo como p
 \end{itemize}
 
 Se han elegido manteniendo la relación de colores de \textit{material desing} y siguiendo normas conocidas de \textit{marketing} y presentación de elementos visuales a consumidores. En estas normas y patrones es común observar que, por ejemplo, el color rojo implica pasión, efervescencia, impulso; ideal para representar ciertos elementos y estimular sensaciones acordes. Nótese que en la mayoría de marcas de comida, el color rojo predomina, ya que lo hace más apetecible al subconsciente humano y predispone al potencial consumidor a querer hacerse con ello. 
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Siguiendo el mismo ejemplo, el verde en marcas de alimentos se utiliza para representa lo natural, la limpieza y frescura; muy empleado en marcas ecológicas. El color base de la aplicación es el azul (hex:\#367cd3); representa la serenidad, responsabilidad, sinceridad y verdad; apto para ser acogedor y mostrar fiabilidad. Es deliberado el uso de este color al igual que también lo es en la mayoría de las redes sociales. Buscan ganarse la confianza del usuario y dar un ambiente en el que se tenga una experiencia relajante y confortable. Por todo esto, el azul acerca la seguridad del criptosistema utilizado. Para más información sobre la evaluación de elementos visuales para las interfaces de usuario ver \cite{coloresStone}.
 
 \section{Seguridad y criptología}
 \label{App:Seguridad y criptología}
 
 La seguridad utilizada se basa en la criptología con curvas elípticas. Para la implementación del criptosistema se han utilizado las clases de la librería \textit{Bouncy Castle} y una interfaz \textit{AppEllipticCurveI} a implementar con los métodos necesarios para la aplicación.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 El flujo se simplifica básicamente en asignar a los usuarios del sistema un punto $P$ aleatorio en una curva elíptica dentro de un campo finito $G(F(2^m))$. Las curvas están delimitadas por un conjunto de nombres de curvas ya definidas que cumplen ciertas características de seguridad (orden de la curva de más de 130 \textit{bits}) y capacidad objetivo (codificaciones no superiores a la capacidad de las tarjetas NFC). Las curvas siguen diferentes estándares y se cargan en función del nombre que se les atribuye, el listado de las curvas disponibles se puede observar en \cite{bouncyCastleCurves} dentro de las correspondientes a los campos $F(2^m)$.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Los puntos $P$ obtenidos se multiplican por una variable aleatoria privada $k$ de 160 \textit{bits} de tamaño obteniendo $kP$. Siguiendo el método \textit{SKEY}, se multiplica el resultado $kP$ tantas veces como usos se hayan indicado a la hora de la creación del punto $P$ (\textit{véase el apartado de la aplicación \ref{App:AD:Nuevo usuario} sobre la creación de usuarios}). Con ello se computa el valor $QkP$ que es un punto en la curva. Computar $kP$ es sencillo, sin embargo, obtener la variable $k$ es computacionalmente muy complejo debido al problema del logaritmo discreto. Para utilizar códigos de un solo uso se computa $Q$ veces la suma de $kP$ para almacenar en la base de datos el punto $(Q+1)kP$ asociado a un usuario de la aplicación; a su vez, se escribe en la tarjeta NFC el valor $QkP$ y el identificador del usuario.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 A la hora de validar la información de la tarjeta se obtiene la codificación del punto $QkP$ de la tarjeta NFC. A este punto se le añade el punto original $kP$ y se comprueba igual a $(Q+1)kP$ de la base de datos. Si coincide se valida la información con lo que se prepara el código del siguiente uso, que se trata de $(X-1)kP$ y se escribe en la tarjeta (guardando el valor comprobante de $(X+1)kP$ hasta alcanzar $kP$, siendo $X$ el uso actual. Una vez agotados los usos se realiza automáticamente la asignación de un nuevo punto al usuario con los $Q$ usos elegidos originalmente.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 Se muestra en la figura \ref{img:eci1} y \ref{img:eci2} la estructura de la interfaz mencionada junto a la documentación de cada uno de los métodos que la componen.
  
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{./img/eci1}
+  \includegraphics[width=0.85\textwidth]{./img/eci1}
   \caption{Interfaz AppEllipticCurveI que se implementa en la aplicación (I).}
   \label{img:eci1}
 \end{figure}
  
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{./img/eci2}
+  \includegraphics[width=0.85\textwidth]{./img/eci2}
   \caption{Interfaz AppEllipticCurveI que se implementa en la aplicación (II).}
   \label{img:eci2}
 \end{figure}
@@ -579,10 +627,14 @@ La seguridad reside en la privacidad del elemento $k$ difícilmente obtenible pe
 \section{Base de datos}
 \label{App:Base de datos}
 
-La base de datos, mencionada en el apartado \ref{App:Materiales y tecnologías utilizadas}, es una pequeña \textit{SQLite}. Se utiliza este tipo de base de datos debido a la comodidad y simplicidad con la que trabaja en un proyecto \textit{Android}.
-\\\\\
-En el escenario virtual de la aplicación, en vez de esta base de datos se utilizaría una centralizada en los servidores de la empresa. Se realizarían conexiones seguras para no comprometer la información a enviar. Sin embargo, ésto no es necesario dentro del ámbito real ya que toda la información que se precisa de los servidores ficticios de la empresa se encuentran dentro de esta pequeña base de datos.
-\\\\\
+La base de datos, mencionada en el apartado \ref{App:Materiales y tecnologías utilizadas}, es \textit{SQLite}, conocida por su sencillez y versatilidad. Se utiliza este tipo de base de datos debido a la comodidad y simplicidad con la que trabaja en un proyecto \textit{Android}.
+\*
+\vspace{0.5515cm}
+\\
+En el escenario virtual de la aplicación, en vez de esta base de datos se utilizaría una centralizada en los servidores de la empresa. Además, se realizarían conexiones seguras para no comprometer la información a enviar. Sin embargo, ésto no es necesario dentro del ámbito del escenario real, ya que toda la información que se precisa de los servidores ficticios de la empresa se encuentran dentro de esta pequeña base de datos.
+\*
+\vspace{0.5515cm}
+\\
 Dentro de esta base de datos se encuentra la información de la curva elíptica implementada y la clave privada asociada (\textit{véase el apartado sobre seguridad y critología \ref{App:Seguridad y criptología}}). También está la información de parte de los usuarios ficticios de la empresa. Por último, se encuentra una tabla referida a la información de cada usuario que compone los datos para poder validar el contenido de cada tarjeta NFC de cada usuario. En la figura \ref{img:database} se observa la distribución de tablas y la relación entre ellas (creado mediante la herramienta online \textit{GenMyModel}\cite{diagramaDBOnline}). Posteriormente en la figura \ref{img:databaseScript} se observa el \textit{script} de creación en lenguaje \textit{SQL}.
 
 \begin{figure}[H]
@@ -648,7 +700,7 @@ La página de inicio será el contenido por defecto del contenedor. Se presenta 
 
 Como elemento del menú se puede acceder a la pantalla donde se visualiza en el contenedor principal la información relacionada con la aplicación. La figura \ref{img:app:acercaDe} muestra la visualización de esta pantalla.
 
-\begin{figure}[H]
+\begin{figure}
   \centering
   \includegraphics[width=0.3\textwidth]{./img/app/acercaDe}
   \caption{Vista de la pantalla 'Acerca De'.}
@@ -692,88 +744,76 @@ En la pestaña de sistema se muestra una advertencia de desplegar una nueva conf
 \subsubsection*{Base de datos}
 \label{App:AD:D:Base de dtaos}
 
-Otra funcionalidad de la aplicación es la de restaurar la base de datos con los parámetros por defecto. Antes de pulsar en el botón de restauración se pedirá una confirmación, finalizando con un mensaje como se puede observar en las figuras \ref{img:app:baseDatos1} y \ref{img:app:baseDatos2} .
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.3\textwidth]{./img/app/despliegueBaseDeDatos}
-  \caption{Pantalla 'Base de Datos'.}
-  \label{img:app:baseDatos1}
-\end{figure}  
+Otra funcionalidad de la aplicación es la de restaurar la base de datos con los parámetros por defecto. Antes de pulsar en el botón de restauración se pedirá una confirmación, finalizando con un mensaje como se puede observar en la figura \ref{img:app:baseDatos}.
 
 %\begin{figure}[H]
 %  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosDialog}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/despliegueBaseDeDatosMensaje}}
-%  \caption{Restauración de los datos por defecto.}
-%  \label{img:app:baseDatos2}
-%\end{figure}
+%  \includegraphics[width=0.3\textwidth]{./img/app/despliegueBaseDeDatos}
+%  \caption{Pantalla 'Base de Datos'.}
+%  \label{img:app:baseDatos1}
+%\end{figure}  
 
 \begin{figure}[H]
 \centering
-	\begin{subfigure}{0.4\textwidth}
+	\begin{subfigure}{0.32\textwidth}
 		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/despliegueBaseDeDatosDialog}
-    \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
+		\includegraphics[width=0.95\textwidth]{./img/app/despliegueBaseDeDatos}
+    \end{subfigure}	
+    \begin{subfigure}{0.32\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{./img/app/despliegueBaseDeDatosDialog}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}  
        \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/despliegueBaseDeDatosMensaje}
+       \includegraphics[width=0.95\textwidth]{./img/app/despliegueBaseDeDatosMensaje}
     \end{subfigure}   
-  \caption{Restauración de los datos por defecto.}
-  \label{img:app:baseDatos2}
+  \caption{Acceso a la pestaña de BBDD y restauración de los datos por defecto.}
+  \label{img:app:baseDatos}
 \end{figure}
 
 \subsection{Nuevo usuario}
 \label{App:AD:Nuevo usuario}
 
-Mediante el menú se accede a la pantalla de creación de nuevo usuario. En esta pantalla se listará en un desplegable los usuarios disponibles (no asignados al sistema actual) y un \textit{spinner} para seleccionar el número de usos que dispondrá el usuario por punto $P$ (ver el apartado de seguridad y criptología \ref{App:Seguridad y criptología}). Cuando se hayan seleccionado los datos se muestra un mensaje de confirmación y aviso para tener a mano la tarjeta NFC en la que se va a grabar la información. La tarjeta deberá seguir el requisito de no estar vacía. La próxima vez que se acerque una tarjeta al terminal escribirá el contenido. Al escribir en la tarjeta se mostrará la pantalla de verificación. En las siguientes figuras \ref{img:app:nuevoUsuario1} y \ref{img:app:nuevoUsuario2} se puede apreciar el funcionamiento.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.3\textwidth]{./img/app/nuevoUsuario}
-  \caption{Pantalla 'Nuevo usuario'.}
-  \label{img:app:nuevoUsuario1}
-\end{figure}  
+Mediante el menú se accede a la pantalla de creación de nuevo usuario. En esta pantalla se listará en un desplegable los usuarios disponibles (no asignados al sistema actual) y un \textit{spinner} para seleccionar el número de usos que dispondrá el usuario por punto $P$ (ver el apartado de seguridad y criptología \ref{App:Seguridad y criptología}). Cuando se hayan seleccionado los datos se muestra un mensaje de confirmación y aviso para tener a mano la tarjeta NFC en la que se va a grabar la información. La tarjeta deberá seguir el requisito de no estar vacía. La próxima vez que se acerque una tarjeta al terminal escribirá el contenido. Al escribir en la tarjeta se mostrará la pantalla de verificación. En la siguiente figura \ref{img:app:nuevoUsuario} se puede apreciar el funcionamiento.
 
 %\begin{figure}[H]
 %  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioDialog}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioAgregado}}
-%  \caption{Aviso de creación de un nuevo usuario y escritura de la tarjeta NFC.}
-%  \label{img:app:nuevoUsuario2}
-%\end{figure}
+%  \includegraphics[width=0.3\textwidth]{./img/app/nuevoUsuario}
+%  \caption{Pantalla 'Nuevo usuario'.}
+%  \label{img:app:nuevoUsuario1}
+%\end{figure}  
 
 \begin{figure}[H]
 \centering
-	\begin{subfigure}{0.4\textwidth}
+	\begin{subfigure}{0.32\textwidth}
 		\centering
-		\includegraphics[width=0.85\textwidth]{./img/app/nuevoUsuarioDialog}
+		\includegraphics[width=0.95\textwidth]{./img/app/nuevoUsuario}
+    \end{subfigure} 
+	\begin{subfigure}{0.32\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{./img/app/nuevoUsuarioDialog}
     \end{subfigure}          
-    \qquad\qquad\qquad  % spacing between the subfigures
-    \begin{subfigure}{0.4\textwidth}  
+    \begin{subfigure}{0.32\textwidth}  
        \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/nuevoUsuarioAgregado}
+       \includegraphics[width=0.95\textwidth]{./img/app/nuevoUsuarioAgregado}
     \end{subfigure}   
-  \caption{Aviso de creación de un nuevo usuario y escritura de la tarjeta NFC.}
-  \label{img:app:nuevoUsuario2}
+%	\begin{subfigure}{0.4\textwidth}
+%		\centering
+%		\includegraphics[width=0.85\textwidth]{./img/app/nuevoUsuarioDialog}
+%    \end{subfigure}          
+%    \begin{subfigure}{0.4\textwidth}  
+%       \centering
+%       \includegraphics[width=0.85\textwidth]{./img/app/nuevoUsuarioAgregado}
+%    \end{subfigure}   
+  \caption{Nuevo usuario, aviso de creación de un nuevo usuario y escritura de la tarjeta NFC.}
+%  \label{img:app:nuevoUsuario2}
+  \label{img:app:nuevoUsuario}  
 \end{figure}
 
 \subsection{Ver usuarios}
 \label{App:AD:Ver usuarios}
 
 Desde el menú se puede acceder a la pestaña de ver usuarios. Donde se muestra la información de la base de datos relativa  los usuarios del sistema actual. La figura \ref{img:app:verUsuarios} muestra la vista con varios usuarios y con un solo usuario en el sistema. Si no hubiera usuarios mostraría un mensaje avisando de que no hay usuarios disponibles.
-
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/verUsuarios}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/nuevoUsuarioInsertado}}
-%  \caption{Listado de varios usuarios y un usuario del sistema.}
-%  \label{img:app:verUsuarios}
-%\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -803,15 +843,6 @@ Por último, el menú dispone la pestaña de verificación. En esta pestaña se 
 \end{figure}  
 
 Cuando el dispositivo detecta el contacto de una tarjeta NFC se lanzará automáticamente esta pantalla en la aplicación. Por lo que no es necesario encontrarse en esta pestaña cuando se acerque la tarjeta al dispositivo. Si el contenido es correcto se mostrará un mensaje de validación, sino mostrará un mensaje de error, ambos comportamientos se ven en la figura \ref{img:app:verificarNFC1}. Sin embargo, puede darse el caso de que no se escriba el nuevo contenido en la tarjeta tras verificarla. De esta forma, no se muestra el mensaje de escritura con éxito hasta que no se vuelva a acercar otra vez la tarjeta NFC, el comportamiento se observa en la figura \ref{img:app:verificarNFC2}.
-%
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionExitoEscrito}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/validacionFallida}}
-%  \caption{Verificar NFC válida común y fallida.}
-%  \label{img:app:verificarNFC1}
-%\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -822,20 +853,11 @@ Cuando el dispositivo detecta el contacto de una tarjeta NFC se lanzará automá
     \qquad\qquad\qquad  % spacing between the subfigures
     \begin{subfigure}{0.4\textwidth}  
        \centering
-       \includegraphics[width=0.85\textwidth]{./img/app/validacionFallida}
+       \includegraphics[width=0.850\textwidth]{./img/app/validacionFallida}
     \end{subfigure}   
   \caption{Verificar NFC válida común y fallida.}
   \label{img:app:verificarNFC1}
 \end{figure}
-
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/ValidacionExitoNoEscrito}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.35\textwidth]{./img/app/escrituraPostLectura}}
-%  \caption{Verificar NFC válida, con escritura realizada y sin ella.}
-%  \label{img:app:verificarNFC2}
-%\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -856,19 +878,14 @@ Cuando el dispositivo detecta el contacto de una tarjeta NFC se lanzará automá
 \label{App:Pruebas}
 
 Para la comprobación y consecución de pruebas unitarias se ha elaborado un proyecto independiente para el testeo de la parte crítica de la aplicación. Ésta parte es la referida a la implementación de la seguridad y criptografía (\textit{véase apartado \ref{App:Seguridad y criptología}}).
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 En cada uno de los métodos de la clase principal se ha testeado que su ejecución en distintos ámbitos y condiciones devuelve los resultados esperados cubriendo un alto porcentaje de código. Las pruebas se han centrado en el \textit{framework} de pruebas unitarias \textit{JUnit}\cite{junit} en su versión 4 elaborada para \textit{Eclipse}\cite{eclipse}.
-\\\\
+\*
+\vspace{0.5515cm}
+\\
 La descripción básica de la clase y su documentación es la recogida por la interfaz que implementa (la descripción en detalle de la clase de puede encontrar en el apartado \ref{App:Seguridad y criptología}). El resultado de los test JUnit se pueden observar en la figura \ref{img:junitTest} con una consecución de cobertura del código de más del 96\% realizado con el complemento \textit{EclEmma}\cite{eclemma} para este propósito. En la misma figura se muestra la prueba de consecución de cobertura código la clase objetivo. 
-
-%\begin{figure}[H]
-%  \centering
-%  \subfloat{\includegraphics[width=0.45\textwidth]{./img/junitTest}}
-%  \null\hfill
-%  \subfloat{\includegraphics[width=0.5\textwidth]{./img/coveredCode}}
-%  \caption{Resultado del test JUnit y cobertura de código alcanzada durante el test JUnit.}
-%  \label{img:junitTest}
-%\end{figure}
 
 \begin{figure}[H]
 \centering
