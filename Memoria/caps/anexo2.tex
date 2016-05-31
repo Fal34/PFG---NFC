@@ -4,20 +4,21 @@
 Gracias a \textit{Sagemath}\cite{sagemath} se puede realizar una implementación de ejemplo para el uso de pairings. El código se mostrado a continuación se ha ejecutado dentro de un terminal de la propia aplicación online.
 
 \begin{lstlisting}
+> Se crea una curva eliptica con las definiciones dadas
 > p = 103; A = 1; B = 18; E = EllipticCurve(GF(p), [A, B])
-
+> Se seleciona un punto de la curva y se muestra el orden del punto elegido
 > P = E(33, 91); n = P.order(); n
 19
-
+> Se obtiene el orden multiplicativo
 > k = GF(n)(p).multiplicative_order(); k
 6
-
+> Se calcula el tate pairing con P, n y k
 > P.tate_pairing(P, n, k)
 1
-
+> Se calcula 3*P
 > 3*P
 (8 : 34 : 1)
-
+> Se muestran los puntos de la curva
 > for point in E:
 >    print point
 (0 : 1 : 0)

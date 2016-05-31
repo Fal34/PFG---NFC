@@ -183,7 +183,7 @@
 
 \label{Palabras clave}
 \begin{center}
-\textbf{Palabras clave}: \textit{Criptografía, Curvas elípticas, NFC, autenticación}.
+\textbf{Palabras clave}: \textit{Criptografía, Curvas elípticas, NFC, Autenticación}.
 \end{center}
 
 \newpage
@@ -195,7 +195,7 @@
 
 \label{Keywords}
 \begin{center}
-\textbf{Keywords}: \textit{Cryptography, elliptic curves, NFC, authentication}.
+\textbf{Keywords}: \textit{Cryptography, elliptic curves, NFC, Authentication}.
 \end{center}
 
 \chapter{Introducción}
@@ -218,12 +218,19 @@
 \subfile{caps/conclusiones}
 
 %% ### - Anexo I - ###
-\chapter*{Anexo I: Comunicación de claves}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+\clearpage % o \cleardoublepage
+%\addappheadtotoc
+%\appendixpage
+\appendix
+\chapter{Anexo: Comunicación de claves}
 \label{AnexoI}
 \subfile{caps/anexo1}
 
 %% ### - Anexo II - ###
-\chapter*{Anexo II: EC - Pairing}
+\chapter{Anexo: EC - Pairing}
 \label{AnexoII}
 \subfile{caps/anexo2}
 

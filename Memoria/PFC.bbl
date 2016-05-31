@@ -2,47 +2,53 @@
 
 \bibitem{keylength}
 BlueKrypt.
-\newblock Cryptographic key length recommendation with arjen k. lenstra
-  teorems.
+\newblock {Cryptographic key length recommendation with Arjen K. Lenstra
+  teorems}.
 \newblock [Online] Disponible en \url{https://www.keylength.com} , última
   visita 25.05.2016.
 
 \bibitem{boneh2001identity}
 Dan Boneh and Matt Franklin.
-\newblock Identity-based encryption from the weil pairing.
+\newblock {Identity-based encryption from the Weil pairing}.
 \newblock In {\em Advances in Cryptology—CRYPTO 2001}, pages 213--229.
   Springer, 2001.
 
 \bibitem{javaReflection}
 Oracle Corporation.
-\newblock Java reflection.
+\newblock {Java Reflection}.
 \newblock [Online] Disponible en
   \url{http://docs.oracle.com/javase/tutorial/reflect/} , última visita
   20.05.2016.
 
 \bibitem{javaSecurity}
 Oracle Corporation.
-\newblock Java security package.
+\newblock {Java Security Package}.
 \newblock [Online] Disponible en \url{https://goo.gl/t3qbR8} , última visita
   02.05.2016.
 
 \bibitem{java}
 Oracle Corporation.
-\newblock Software java.
+\newblock {Software Java}.
 \newblock [Online] Disponible en
   \url{https://www.oracle.com/es/java/index.html} , última visita 07.05.2016.
 
 \bibitem{definicionCurvasF2M}
 Technische~Universität Darmstadt.
-\newblock Curves over gf(2m) defined by ansi x9.62.
+\newblock {Curves over GF(2m) defined by ANSI X9.62}.
 \newblock [Online] Disponible en
   \url{https://www.flexiprovider.de/CurvesGf2mX962.html} , última visita
   19.05.2016.
 
 \bibitem{diffie1976new}
-Whitfield Diffie and Martin~E Hellman.
+Whitfield Diffie and Martin~E. Hellman.
 \newblock New directions in cryptography.
 \newblock {\em Information Theory, IEEE Transactions on}, 22(6):644--654, 1976.
+
+\bibitem{squareMultiply}
+DIMACS.
+\newblock Square and multiply algorithm.
+\newblock [Online] Disponible en \url{http://goo.gl/YjYIqB} , última visita
+  15.05.2016.
 
 \bibitem{dupont2006provably}
 R{\'e}gis Dupont and Andreas Enge.
@@ -51,13 +57,13 @@ R{\'e}gis Dupont and Andreas Enge.
 
 \bibitem{eclemma}
 EclEmma.
-\newblock Java code coverage for eclipse.
+\newblock {Java Code coverage for Eclipse}.
 \newblock [Online] Disponible en \url{http://eclemma.org/} , última visita
   20.05.2016.
 
 \bibitem{nfcSpecifications}
 NFC Forum.
-\newblock Nfc forum specifications.
+\newblock {NFC Forum Specifications}.
 \newblock 16-04-2014. [Online] Disponible en
   \url{http://www.nfc-forum.org/specs/} , última visita 14.05.2016.
 
@@ -68,74 +74,74 @@ Eclipse Fundation.
   17.05.2016.
 
 \bibitem{galbraith2016recent}
-Steven~D Galbraith and Pierrick Gaudry.
+Steven~D. Galbraith and Pierrick Gaudry.
 \newblock Recent progress on the elliptic curve discrete logarithm problem.
 \newblock {\em Designs, Codes and Cryptography}, 78(1):51--72, 2016.
 
 \bibitem{diagramaDBOnline}
 GenMyModel.
-\newblock Genmymodel modeling platform.
+\newblock {GenMyModel modeling platform}.
 \newblock [Online] Disponible en \url{https://www.genmymodel.com} , última
   visita 19.05.2016.
 
 \bibitem{fengHaoCode}
 Feng Hao.
-\newblock J-pake as ecdsa implementation.
+\newblock {J-PAKE as ECDSA implementation}.
 \newblock 29-12-2013. [Online] Disponible en \url{http://goo.gl/myx25b} ,
   última visita 20.05.2016.
 
 \bibitem{androidAPI21}
 Google Inc.
-\newblock Android apis - about version 5.0.
+\newblock {Android APIs - About version 5.0}.
 \newblock [Online] Disponible en \url{http://goo.gl/0J6M7b} , última visita
   14.05.2016.
 
 \bibitem{androidAPI22}
 Google Inc.
-\newblock Android apis - about version 5.1.
+\newblock {Android APIs - About version 5.1}.
 \newblock [Online] Disponible en \url{http://goo.gl/jCA4QL} , última visita
   14.05.2016.
 
 \bibitem{androidStudio}
 Google Inc.
-\newblock Android studio - the official ide for android.
+\newblock {Android Studio - The Official IDE for Android}.
 \newblock [Online] Disponible en
   \url{http://developer.android.com/intl/ko/sdk/index.html} , última visita
   05.05.2016.
 
 \bibitem{materialDesign}
 Google Inc.
-\newblock Material design guidelines.
+\newblock {Material design guidelines}.
 \newblock [Online] Disponible en \url{https://goo.gl/RlCfEf} , última visita
   13.05.2016.
 
 \bibitem{googleIcons}
 Google Inc.
-\newblock Material design icons.
+\newblock {Material Design Icons}.
 \newblock [Online] Disponible en \url{https://design.google.com/icons/} ,
   última visita 08.05.2016.
 
 \bibitem{sagemath}
 SageMath Inc.
-\newblock Sagemath - collaborative computational mathematics.
+\newblock {SageMath - Collaborative Computational Mathematics}.
 \newblock [Online] Disponible en \url{http://cloud.sagemath.com} , última
   visita 23.05.2016.
 
 \bibitem{iso14443}
 ISO/IEC.
-\newblock Iso/iec standard 14443-3.
+\newblock {ISO/IEC Standard 14443-3}.
 \newblock 2011. [Online] Disponible en
   \url{https://www.iso.org/obp/ui/#!iso:std:50942:en} , última visita
   14.05.2016.
 
 \bibitem{junit}
 JUnit.
-\newblock Junit - unitary test framework.
+\newblock {JUnit - Unitary test framework}.
 \newblock [Online] Disponible en \url{http://junit.org/junit4/} , última
   visita 17.05.2016.
 
 \bibitem{lenstra}
-Arjen~K Lenstra and Eric~R Verheul.
+Arjen~K. Lenstra and Eric~R. Verheul.
 \newblock Selecting cryptographic key sizes.
 \newblock {\em Journal of cryptology}, 14(4):255--293, 2001.
 
@@ -146,20 +152,20 @@ Manuel~Jos{\'e} Lucena.
 
 \bibitem{mifare}
 MIFARE.
-\newblock Mifare ic - contactless smart cards.
+\newblock {MIFARE IC - Contactless smart cards}.
 \newblock [Online] Disponible en
   \url{https://www.mifare.net/en/products/chip-card-ics/} , última visita
   11.05.2016.
 
 \bibitem{bouncyCastle}
 Legion of~the Bouncy Castle~Inc.
-\newblock Bouncy castle - api criptográfica.
+\newblock {Bouncy Castle - API Criptográfica}.
 \newblock [Online] Disponible en \url{https://www.bouncycastle.org/java.html} ,
   última visita 10.05.2016.
 
 \bibitem{bouncyCastleCurves}
 Legion of~the Bouncy Castle~Inc.
-\newblock Bouncy castle - supported curves (ecdsa and ecgost).
+\newblock {Bouncy Castle - Supported Curves (ECDSA and ECGOST)}.
 \newblock [Online] Disponible en \url{http://goo.gl/TQipcD} , última visita
   21.05.2016.
 
@@ -170,13 +176,13 @@ Jos{\'e} Pastor and Miguel {\'A}ngel~Sarasa L{\'o}pez.
 
 \bibitem{yUML}
 Pocketworks.
-\newblock yuml diagrams.
+\newblock {yUML Diagrams}.
 \newblock [Online] Disponible en \url{http://yuml.me/} , última visita
   16.05.2016.
 
 \bibitem{stonesCryOut}
 Randall Price.
-\newblock {\em The Stones Cry Out}.
+\newblock {\em {The Stones Cry Out}}.
 \newblock Harvest House, 1997.
 
 \bibitem{ramli2008iris}
@@ -185,43 +191,43 @@ Mohamad Ramli, Nurul Akmar, Muhammad~Saufi Kamarudin, and Ariffuddin Joret.
 \newblock 2008.
 
 \bibitem{rivest1978method}
-Ronald~L Rivest, Adi Shamir, and Len Adleman.
+Ronald~L. Rivest, Adi Shamir, and Len Adleman.
 \newblock A method for obtaining digital signatures and public-key
   cryptosystems.
 \newblock {\em Communications of the ACM}, 21(2):120--126, 1978.
 
 \bibitem{bruce}
 Bruce Schneier.
-\newblock Applied cryptography, second edition: Protocols, algorthms, and
-  source code in c (cloth).
+\newblock {Applied Cryptography, Second Edition: Protocols, Algorthms, and
+  Source Code in C (cloth)}.
 \newblock 1996.
 
 \bibitem{shannon2001mathematical}
-Claude~Elwood Shannon.
+Claude~E. Shannon.
 \newblock A mathematical theory of communication.
 \newblock {\em ACM SIGMOBILE Mobile Computing and Communications Review},
   5(1):3--55, 2001.
 
 \bibitem{sqlite}
 SQLite.
-\newblock Sqlite - public domain embedded sql database engine.
+\newblock {SQLite - Public domain embedded SQL database engine}.
 \newblock [Online] Disponible en \url{https://www.sqlite.org/} , última visita
   11.05.2016.
 
 \bibitem{coloresStone}
 Debbie Stone, Caroline Jarrett, Mark Woodroffe, and Shailey Minocha.
-\newblock {\em User interface design and evaluation}.
+\newblock {\em {User interface design and evaluation}}.
 \newblock Morgan Kaufmann, 2005.
 
 \bibitem{gantt}
 GanttProject Team.
-\newblock Ganttproject.
+\newblock {GanttProject}.
 \newblock [Online] Disponible en \url{http://ganttproject.biz/} , última
   visita 15.05.2016.
 
 \bibitem{whatsappEncryption}
 Whatsapp.
-\newblock Whatsapp encryption overview.
+\newblock {Whatsapp encryption overview}.
 \newblock 04-04-2014. [Online] Disponible en \url{https://goo.gl/oiHqiH} ,
   última visita 14.05.2016.
 
